@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,10 +24,9 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  opacity: 1;
 }
 
-/* Header */
+/* Transparent Header */
 header {
   position: fixed;
   top: 0;
@@ -36,26 +36,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
-header h1 {
+header .logo {
   font-size: 2rem;
-  color: #00ffff;
   font-weight: bold;
-  text-shadow: 0 0 10px #00ffff;
+  color: #00ffff;
 }
 
-.nav-links a {
+header nav a {
+  color: #ffffff;
   margin-left: 1.5rem;
-  color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
+header nav a:hover {
   color: #00ffff;
 }
 
@@ -67,76 +66,89 @@ header h1 {
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: transparent;
 }
 
-.hero h2 {
-  font-size: 4rem;
+.hero h1 {
+  font-size: 4.5rem;
   font-weight: 900;
   color: #00ffff;
   text-shadow: 0 0 20px #00ffff;
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-top: 1rem;
   color: #ffffff;
   text-shadow: 0 0 10px #ffffff;
 }
 
-/* Info Section Zigzag */
-.info-zigzag {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  padding: 8rem 2rem 4rem;
+/* Zigzag Info Sections */
+.info-section {
+  padding: 6rem 2rem;
   background-color: #111;
 }
 
-.info-box {
+.info-block {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin: 3rem 0;
   justify-content: space-between;
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 2rem;
 }
 
-.info-box:nth-child(even) {
-  flex-direction: row-reverse;
+.info-box {
+  flex: 1 1 45%;
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  transition: transform 0.4s;
 }
 
 .info-box:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  transform: rotateY(8deg) scale(1.03);
 }
 
-.info-box h3 {
-  font-size: 2rem;
+.info-box h2 {
   color: #00ffff;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .info-box p {
   color: #ccc;
-  max-width: 600px;
-  line-height: 1.6;
+  font-size: 1.1rem;
 }
 
-/* Footer */
+/* Contact Footer */
 footer {
-  text-align: center;
-  padding: 2rem;
   background-color: #000;
-  color: #888;
-  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1rem;
 }
 
-footer strong {
-  color: #fff;
+footer h3 {
+  color: #00ffff;
+  margin-bottom: 1rem;
 }
 
+footer p {
+  margin: 0.5rem 0;
+}
 
+/* Responsive */
+@media (max-width: 768px) {
+  .info-block {
+    flex-direction: column;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header nav {
+    margin-top: 1rem;
+  }
+}
