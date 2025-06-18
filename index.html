@@ -2,9 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tesra AI | Autonomous Defense Systems</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Background Video Styling */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: black;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Hero Removed */
+
+    /* Mission Section */
+    .mission {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .mission h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .mission p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Slider Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .feature-card .caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ccc;
+      text-align: center;
+    }
+
+    footer h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .socials {
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      color: #ccc;
+      margin: 0 0.8rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    .copyright {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a2d00c1234.js" crossorigin="anonymous"></script> <!-- Replace with your FontAwesome Kit -->
 </head>
 <body>
 
@@ -18,50 +155,67 @@
   <header class="site-header">
     <div class="logo">TESRA AI</div>
     <nav class="navbar">
-      <a href="#drones">Drones</a>
-      <a href="#arms">Robotic Arms</a>
-      <a href="#combat">Combat Bots</a>
-      <a href="#research">Research</a>
+      <a href="#mission">Mission</a>
+      <a href="#features">Features</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Next-Gen Autonomous Defense</h1>
-    <p>Harnessing AI for national security and global dominance in defense tech.</p>
+  <!-- Mission Section -->
+  <section class="mission" id="mission">
+    <h2>Our Mission</h2>
+    <p>
+      At Tesra AI, we develop autonomous defense systems that redefine how modern warfare is conducted. From intelligent drones to combat robots and AI command centers, our mission is to empower nations with smarter, safer, and faster defense capabilities powered by artificial intelligence.
+    </p>
   </section>
 
-  <!-- Zigzag Info Blocks -->
-  <section class="info-zigzag" id="drones">
-    <div class="info-box left">
-      <h2>Autonomous Drones</h2>
-      <p>AI-guided drones for high-precision surveillance and tactical operations in combat zones.</p>
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="feature-card">
+      <img src="https://via.placeholder.com/400x200?text=Autonomous+Drones" alt="Drones" />
+      <div class="caption">
+        <h3>Autonomous Drones</h3>
+        <p>Precision surveillance and AI-guided tactical missions.</p>
+      </div>
     </div>
-    <div class="info-box right" id="arms">
-      <h2>Robotic Arms</h2>
-      <p>Designed for real-time battlefield repairs, disarming explosives, and surgical combat tasks.</p>
+    <div class="feature-card">
+      <img src="https://via.placeholder.com/400x200?text=Robotic+Arms" alt="Robotic Arms" />
+      <div class="caption">
+        <h3>Robotic Arms</h3>
+        <p>Battlefield support with real-time repairs and neutralization.</p>
+      </div>
     </div>
-    <div class="info-box left" id="combat">
-      <h2>Combat Robotics</h2>
-      <p>Armored ground units capable of autonomous threat detection and neutralization.</p>
+    <div class="feature-card">
+      <img src="https://via.placeholder.com/400x200?text=Combat+Bots" alt="Combat Bots" />
+      <div class="caption">
+        <h3>Combat Bots</h3>
+        <p>Ground units that detect, defend, and destroy threats autonomously.</p>
+      </div>
     </div>
-    <div class="info-box right" id="research">
-      <h2>AI Core & Cyber Systems</h2>
-      <p>Integrated AI cloud that predicts enemy strategies and delivers real-time counter tactics.</p>
-    </div>
-    <div class="info-box left">
-      <h2>Satellite Coordination</h2>
-      <p>Mesh-linked satellite data synced to battlefield AI, boosting long-range precision support.</p>
+    <div class="feature-card">
+      <img src="https://via.placeholder.com/400x200?text=AI+Command" alt="AI Systems" />
+      <div class="caption">
+        <h3>AI & Satellite Command</h3>
+        <p>Real-time enemy strategy prediction and satellite-integrated precision support.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer id="contact">
     <h3>Contact Tesra AI</h3>
     <p>Email: contact@tesraai.com</p>
     <p>Location: Hauz Khas, New Delhi, India</p>
-    <p>&copy; 2025 Tesra AI. All rights reserved.</p>
+
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/Tesra-ai" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <div class="copyright">
+      &copy; 2025 Tesra AI. All rights reserved.
+    </div>
   </footer>
 
 </body>
