@@ -23,6 +23,40 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+  opacity: 1;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
 }
 
 /* Hero Section */
@@ -33,11 +67,10 @@ body {
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
+  background: transparent;
 }
 
-.hero h1 {
+.hero h2 {
   font-size: 4rem;
   font-weight: 900;
   color: #00ffff;
@@ -51,35 +84,46 @@ body {
   text-shadow: 0 0 10px #ffffff;
 }
 
-/* Info Section */
-.info-section {
-  padding: 5rem 2rem;
+/* Info Section Zigzag */
+.info-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 8rem 2rem 4rem;
   background-color: #111;
 }
 
-.info {
-  max-width: 800px;
-  margin: 3rem auto;
-  background: #1e1e1e;
+.info-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a1a;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-  transition: transform 0.3s;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info:hover {
-  transform: scale(1.02);
+.info-box:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.info h2 {
-  color: #00ffff;
+.info-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+}
+
+.info-box h3 {
   font-size: 2rem;
+  color: #00ffff;
   margin-bottom: 1rem;
 }
 
-.info p {
+.info-box p {
   color: #ccc;
-  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 /* Footer */
@@ -90,3 +134,9 @@ footer {
   color: #888;
   font-size: 0.9rem;
 }
+
+footer strong {
+  color: #fff;
+}
+
+
