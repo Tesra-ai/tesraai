@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tessra AI | Autonomous Defense Systems</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
   <style>
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
       color: #111;
     }
 
@@ -28,7 +27,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 1rem 4rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -38,13 +37,17 @@
 
     .logo {
       font-size: 1.8rem;
-      font-weight: 600;
+      font-weight: 700;
       color: #fff;
       letter-spacing: 1px;
     }
 
+    .navbar {
+      display: flex;
+      gap: 30px;
+    }
+
     .navbar a {
-      margin-left: 30px;
       color: #fff;
       text-decoration: none;
       font-weight: 500;
@@ -57,7 +60,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: left;
     }
 
     .mission-block {
@@ -69,95 +71,111 @@
       margin-bottom: 3rem;
     }
 
-    .mission-left h2 {
+    .mission-left h2,
+    .future-left h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
       font-weight: 500;
     }
 
-    .mission-left h1 {
+    .mission-left h1,
+    .future-left h1 {
       font-size: 2.5rem;
       font-weight: 700;
       color: #000;
       max-width: 500px;
     }
 
-    .mission-right p {
+    .mission-right p,
+    .future-right p {
       font-size: 1rem;
       line-height: 1.6;
       max-width: 500px;
       margin-bottom: 1rem;
     }
 
-    .mission-right a {
+    .mission-right a,
+    .future-right a {
       font-weight: 600;
       color: #000;
       text-decoration: underline;
     }
 
-    .mission-image, .innovation-image {
-      max-width: 1000px;
-      margin-top: 2rem;
+    .mission-image img {
+      width: 100vw;
+      max-width: 100%;
+      display: block;
+      margin: 2rem auto;
     }
 
-    .mission-image img, .innovation-image img {
+    .future-block {
+      max-width: 1100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+    }
+
+    .future-image img {
       width: 100%;
       border-radius: 12px;
-    }
-
-    .innovation-section {
-      background-color: #fff;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .innovation-section h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .innovation-section p {
+      display: block;
+      margin: 2rem auto;
       max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
     }
 
     footer {
       background-color: #000;
       color: #fff;
       padding: 4rem 2rem;
-    }
-
-    .footer-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      text-align: left;
-    }
-
-    .footer-column h4 {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .footer-column a, .footer-column p {
-      display: block;
-      color: #ccc;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       font-size: 0.9rem;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
     }
 
-    .footer-bottom {
+    footer .footer-col {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 1.5rem;
+    }
+
+    footer h4 {
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer .bottom-note {
+      width: 100%;
       text-align: center;
       margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #777;
+      border-top: 1px solid #333;
+      padding-top: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .mission-block, .future-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -165,7 +183,7 @@
 
   <!-- Background Video -->
   <video autoplay muted loop id="bg-video" playsinline>
-    <source src="assets/tesra-bg.mp4" type="video/mp4" />
+    <source src="assets/tesra-bg.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
   </video>
 
@@ -179,7 +197,7 @@
     </nav>
   </header>
 
-  <!-- Our Mission Section (unchanged) -->
+  <!-- Our Mission Section -->
   <section class="info-section" id="mission">
     <div class="mission-block">
       <div class="mission-left">
@@ -193,44 +211,60 @@
       </div>
     </div>
     <div class="mission-image">
-      <img src="assets/itsimage.png" alt="Tessra AI Mission Image" />
+      <img src="assets/itsimage.png" alt="Tessra AI Mission Fullscreen Image" />
     </div>
   </section>
 
-  <!-- Innovation Section (new) -->
-  <section class="innovation-section">
-    <h2>The Future Belongs to Innovation</h2>
-    <p>We are at the forefront creating bots, tools, robots, and drones to ensure modern defense superiority, reliability, and automation.</p>
-    <div class="innovation-image">
-      <img src="assets/image1.png" alt="Tessra AI Innovation" />
+  <!-- Future Innovation Section -->
+  <section class="info-section" style="background-color: #f5f5f5;">
+    <div class="future-block">
+      <div class="future-left">
+        <h2>The Future Belongs to Innovation</h2>
+        <h1>We are at the forefront creating bots, tools, robots and drones.</h1>
+      </div>
+      <div class="future-right">
+        <p>Tessra AI believes in solving tomorrow’s defense challenges today. Our teams are developing autonomous systems that redefine warfare and intelligence gathering at global scale.</p>
+        <p>Our mission is to innovate relentlessly and deliver systems that safeguard national interests with unmatched AI precision.</p>
+      </div>
+    </div>
+    <div class="future-image">
+      <img src="assets/image1.png" alt="Innovation Image" />
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-column">
-        <h4>ABOUT US</h4>
-        <a href="#mission">Mission</a>
-        <a href="#">Careers</a>
-        <a href="#">Leadership</a>
-        <a href="#">Newsroom</a>
-        <a href="#">Blog</a>
-      </div>
-      <div class="footer-column">
-        <h4>PRODUCTS</h4>
-        <a href="#">Robots</a>
-        <a href="#">Multi-purpose Bots</a>
-        <a href="#">Drones</a>
-      </div>
-      <div class="footer-column">
-        <h4>CONTACT US</h4>
-        <p>Email: contact@tessraai.com</p>
-        <p>Location: Hauz Khas, New Delhi, India</p>
-      </div>
+  <footer id="contact">
+    <div class="footer-col">
+      <img src="assets/logo.png" alt="TESSRA Logo" style="height: 30px; margin-bottom: 10px;">
     </div>
-    <div class="footer-bottom">
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <ul>
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Media</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">Robots</a></li>
+        <li><a href="#">Multi-purpose Bots</a></li>
+        <li><a href="#">Drones</a></li>
+        <li><a href="#">AI Tools</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Email: contact@tessraai.com</p>
+      <p>Location: Hauz Khas, New Delhi, India</p>
+    </div>
+    <div class="bottom-note">
       <p>&copy; 2025 Tessra AI. All rights reserved.</p>
+      <p>Privacy Policy | Terms of Use</p>
     </div>
   </footer>
 
