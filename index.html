@@ -4,22 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tessra AI | Autonomous Defense Systems</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Disable scrollbar but keep scroll functionality */
-    html, body {
+    body, html {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
       color: #111;
-      overflow-y: scroll;
-      scrollbar-width: none; /* Firefox */
-    }
-    body::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
     }
 
-    /* Black header with white text */
     .site-header {
       position: fixed;
       top: 0;
@@ -29,7 +23,7 @@
       justify-content: space-between;
       align-items: center;
       background-color: #000;
-      z-index: 1000;
+      z-index: 10;
     }
 
     .logo {
@@ -46,7 +40,6 @@
       font-weight: 600;
     }
 
-    /* Background video under header */
     #bg-video {
       margin-top: 0;
       width: 100vw;
@@ -54,8 +47,6 @@
       object-fit: cover;
       z-index: -1;
       display: block;
-      position: relative;
-      top: 0;
     }
 
     .info-section {
@@ -170,13 +161,13 @@
     </nav>
   </header>
 
-  <!-- Background Video -->
+  <!-- Background Video (no spacing below header) -->
   <video autoplay muted loop id="bg-video" playsinline>
     <source src="assets/tesra-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  <!-- Mission Section -->
+  <!-- Mission Section (copied exactly like the screenshot) -->
   <section class="info-section" id="mission">
     <div class="mission-block">
       <div class="mission-left">
