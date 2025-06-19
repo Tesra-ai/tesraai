@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tesra AI | Autonomous Defense Systems</title>
+  <title>Tessra AI | Autonomous Defense Systems</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body, html {
@@ -32,29 +32,29 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
       z-index: 10;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #222;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #000;
       letter-spacing: 1px;
     }
 
     .navbar a {
-      margin-left: 20px;
-      color: #333;
+      margin: 0 15px;
+      color: #000;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .info-section {
       background-color: #f0f0f0;
       color: #111;
-      padding: 6rem 2rem 4rem;
+      padding: 7rem 2rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -107,31 +107,59 @@
     }
 
     footer {
-      background-color: #111;
+      background-color: #000;
       color: #fff;
-      padding: 2rem;
-      text-align: center;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
-    .social-icons a {
-      margin: 0 10px;
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin: 1rem;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-column ul li a {
       color: #fff;
-      font-size: 1.5rem;
       text-decoration: none;
+      font-weight: 400;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #333;
+      padding-top: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Video -->
   <video autoplay muted loop id="bg-video" playsinline>
     <source src="assets/tesra-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  <!-- Header -->
   <header class="site-header">
-    <div class="logo">TESRA AI</div>
+    <div class="logo">TESSRA AI</div>
     <nav class="navbar">
       <a href="#">Home</a>
       <a href="#mission">Mission</a>
@@ -139,35 +167,56 @@
     </nav>
   </header>
 
-  <!-- Info Section (Mission) -->
   <section class="info-section" id="mission">
     <div class="mission-block">
       <div class="mission-left">
-        <h2>Our Mission</h2>
-        <h1>Transforming defense capabilities with advanced technology.</h1>
+        <h2>The Future Belongs to Innovation</h2>
+        <h1>We are at the forefront creating bots, tools, robots and drones.</h1>
       </div>
       <div class="mission-right">
         <p>The battlefield has changed. How we deter & defend needs to change too.</p>
-        <p>Security threats are evolving at machine speed. To keep pace, Tesra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
+        <p>Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
         <a href="#">Learn more about our mission →</a>
       </div>
     </div>
     <div class="mission-image">
-      <img src="assets/itsimage.png" style="width:100%; max-width:800px; display:block; margin: 40px auto;" />
+      <img src="assets/image1.png" alt="Tessra AI Image" />
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <h3>Contact Tesra AI</h3>
-    <p>Email: contact@tesraai.com</p>
-    <p>Location: Hauz Khas, New Delhi, India</p>
-    <div class="social-icons">
-      <a href="https://instagram.com/" target="_blank">📷</a>
-      <a href="https://github.com/Tesra-ai" target="_blank">💻</a>
-      <a href="https://facebook.com/" target="_blank">📘</a>
+  <footer>
+    <div class="footer-column">
+      <h4>ABOUT US</h4>
+      <ul>
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
     </div>
-    <p>&copy; 2025 Tesra AI. All rights reserved.</p>
+    <div class="footer-column">
+      <h4>PRODUCTS</h4>
+      <ul>
+        <li><a href="#">Robots</a></li>
+        <li><a href="#">Multi-purpose Bots</a></li>
+        <li><a href="#">Drones</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>CONTACT US</h4>
+      <ul>
+        <li><a href="mailto:contact@tessraai.com">contact@tessraai.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Tessra AI. All rights reserved.</p>
+      <p><a href="#" style="color:#ccc; text-decoration:none;">Privacy Policy</a> | <a href="#" style="color:#ccc; text-decoration:none;">Terms of Use</a></p>
+    </div>
   </footer>
 
 </body>
