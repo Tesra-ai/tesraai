@@ -96,11 +96,13 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .mission-left h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
   font-weight: 500;
 }
 
@@ -110,13 +112,14 @@ body::-webkit-scrollbar {
   color: #000;
   max-width: 500px;
   line-height: 1.25;
+  margin: 0;
 }
 
 .mission-right p {
   font-size: 1rem;
   line-height: 1.6;
   max-width: 500px;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 
 .mission-right a {
