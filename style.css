@@ -21,7 +21,8 @@ body::-webkit-scrollbar {
   left: 0;
   right: 0;
   display: flex;
-  padding: 0.5rem 2rem;   
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;   
   justify-content: space-between;
   align-items: center;
   background-color: #000;
@@ -40,19 +41,27 @@ body::-webkit-scrollbar {
 
 /* Navbar */
 .navbar {
-  margin-left: auto;
-  display: flex;
+ display: flex;
   gap: 20px;
-  padding-right: 2rem; 
+  
 }
 
 .navbar a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  white-space: nowrap;
+  
 }
 
+@media (max-width: 600px) {
+  .navbar{
+    gap: 10px;
+  }
+  
+.logo {
+  font-size: 1.5rem;
+  }
+}
 /* Background video */
 #bg-video {
   margin-top: 0;
