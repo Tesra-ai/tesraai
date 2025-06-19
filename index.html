@@ -41,17 +41,18 @@
     }
 
     #bg-video {
-      margin-top: 80px; /* Push video below the fixed header */
+      margin-top: 0;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
       z-index: -1;
+      display: block;
     }
 
     .info-section {
       background-color: #f0f0f0;
       color: #111;
-      padding: 6rem 2rem 4rem;
+      padding: 7rem 2rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -160,22 +161,22 @@
     </nav>
   </header>
 
-  <!-- Background Video (now below header) -->
+  <!-- Background Video (no spacing below header) -->
   <video autoplay muted loop id="bg-video" playsinline>
     <source src="assets/tesra-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  <!-- Mission Section -->
+  <!-- Mission Section (copied exactly like the screenshot) -->
   <section class="info-section" id="mission">
     <div class="mission-block">
       <div class="mission-left">
-        <h2>The Future Belongs to Innovation</h2>
-        <h1>We are at the forefront creating bots, tools, robots and drones.</h1>
+        <h2>Our Mission</h2>
+        <h1>Transforming defense<br>capabilities with advanced<br>technology.</h1>
       </div>
       <div class="mission-right">
-        <p>The battlefield has changed. How we deter & defend needs to change too.</p>
-        <p>Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
+        <p>The battlefield has changed. How we deter &amp; defend needs to change too.</p>
+        <p>Security threats are evolving at machine speed. To keep pace,<br>Tessra AI puts products ahead of process and builds technology<br>to bring India and its allies quantum leaps ahead in capability.</p>
         <a href="#">Learn more about our mission →</a>
       </div>
     </div>
@@ -222,3 +223,4 @@
 
 </body>
 </html>
+
