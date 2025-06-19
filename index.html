@@ -6,14 +6,26 @@
   <title>Tessra AI | Autonomous Defense Systems</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body, html {
+    /* ✅ Scrollbar hidden visually but scrolling allowed */
+    body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
       color: #111;
+      overflow-y: scroll;
+      scrollbar-width: none;         /* Firefox */
     }
 
+    body::-webkit-scrollbar {
+      display: none;                 /* Chrome, Safari */
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ✅ Header fully black and white text */
     .site-header {
       position: fixed;
       top: 0;
@@ -23,36 +35,41 @@
       justify-content: space-between;
       align-items: center;
       background-color: #000;
-      z-index: 10;
+      z-index: 100;
     }
 
     .logo {
       font-size: 2rem;
       font-weight: bold;
-      color: #fff;
+      color: white;
       letter-spacing: 1px;
     }
 
     .navbar a {
       margin: 0 15px;
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-weight: 600;
     }
 
+    /* ✅ Video directly under header with no gap */
     #bg-video {
+      position: relative;
+      top: 0;
       margin-top: 0;
+      padding-top: 0;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      z-index: -1;
       display: block;
+      z-index: 0;
     }
 
+    /* ✅ Info section & content */
     .info-section {
       background-color: #f0f0f0;
       color: #111;
-      padding: 7rem 2rem 4rem;
+      padding: 6rem 2rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -104,6 +121,7 @@
       border-radius: 12px;
     }
 
+    /* ✅ Footer like Anduril style */
     footer {
       background-color: #000;
       color: #fff;
@@ -151,7 +169,7 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ✅ Header -->
   <header class="site-header">
     <div class="logo">TESSRA AI</div>
     <nav class="navbar">
@@ -161,31 +179,31 @@
     </nav>
   </header>
 
-  <!-- Background Video (no spacing below header) -->
+  <!-- ✅ Background video placed just after header -->
   <video autoplay muted loop id="bg-video" playsinline>
     <source src="assets/tesra-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  <!-- Mission Section (copied exactly like the screenshot) -->
+  <!-- ✅ Mission Section -->
   <section class="info-section" id="mission">
     <div class="mission-block">
       <div class="mission-left">
         <h2>Our Mission</h2>
-        <h1>Transforming defense<br>capabilities with advanced<br>technology.</h1>
+        <h1>Transforming defense capabilities with advanced technology.</h1>
       </div>
       <div class="mission-right">
-        <p>The battlefield has changed. How we deter &amp; defend needs to change too.</p>
-        <p>Security threats are evolving at machine speed. To keep pace,<br>Tessra AI puts products ahead of process and builds technology<br>to bring India and its allies quantum leaps ahead in capability.</p>
+        <p>The battlefield has changed. How we deter & defend needs to change too.</p>
+        <p>Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
         <a href="#">Learn more about our mission →</a>
       </div>
     </div>
     <div class="mission-image">
-      <img src="assets/image1.png" alt="Tessra AI Image" />
+      <img src="assets/itsimage.png" alt="Tessra AI Mission Image" />
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ✅ Footer -->
   <footer id="contact">
     <div class="footer-column">
       <h4>ABOUT US</h4>
@@ -223,4 +241,3 @@
 
 </body>
 </html>
-
