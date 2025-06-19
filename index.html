@@ -2,244 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tessra AI | Autonomous Defense Systems</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tessra</title>
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #111;
+      box-sizing: border-box;
     }
 
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
     }
 
-    .site-header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: transparent;
-      box-shadow: none;
-      z-index: 10;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
+    header {
+      background-color: #000;
       color: white;
-      letter-spacing: 1px;
+      padding: 20px;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .header-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 20px;
+      font-size: 20px;
     }
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .info-section {
-      background-color: transparent;
-      color: #fff;
-      padding: 6rem 2rem 4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: left;
-    }
-
-    .mission-block {
-      max-width: 1100px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 3rem;
-    }
-
-    .mission-left h2, .innovation-left h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    .mission-left h1, .innovation-left h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: white;
-      max-width: 500px;
-    }
-
-    .mission-right p, .innovation-right p {
-      font-size: 1rem;
-      line-height: 1.6;
-      max-width: 500px;
-      color: white;
-      margin-bottom: 1rem;
-    }
-
-    .mission-right a {
-      font-weight: 600;
-      color: white;
-      text-decoration: underline;
-    }
-
-    .mission-image img, .innovation-image img {
+    .video-container {
+      position: relative;
       width: 100%;
-      max-width: 100%;
-      border-radius: 12px;
-      margin-top: 3rem;
+      height: auto;
+      overflow: hidden;
     }
 
-    footer {
-      background-color: #111;
-      color: #fff;
-      padding: 3rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.9rem;
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 3rem;
-      max-width: 1000px;
-      margin-bottom: 2rem;
-      text-align: left;
+    .mission-section {
+      padding: 60px 40px;
+      background-color: #000;
     }
 
-    .footer-grid div {
-      min-width: 150px;
+    .mission-section h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
     }
 
-    .footer-grid h4 {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: #aaa;
-    }
-
-    .footer-grid ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-grid li {
-      margin: 0.3rem 0;
-      color: #fff;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      color: #fff;
-      font-size: 1.5rem;
-      text-decoration: none;
+    .image-section img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <!-- Background Video -->
-  <video autoplay muted loop id="bg-video" playsinline>
-    <source src="assets/tesra-bg.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
 
-  <!-- Transparent Header -->
-  <header class="site-header">
-    <div class="logo">TESSRA AI</div>
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#mission">Mission</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header>
+    <div class="header-content">
+      <h1>Tessra</h1>
+      <div class="nav-links">
+        <span>Home</span>
+        <span>Mission</span>
+        <span>Contact</span>
+      </div>
+    </div>
   </header>
 
-  <!-- Mission Section -->
-  <section class="info-section" id="mission">
-    <div class="mission-block">
-      <div class="mission-left">
-        <h2>Our Mission</h2>
-        <h1>Transforming defense capabilities with advanced technology.</h1>
-      </div>
-      <div class="mission-right">
-        <p>The battlefield has changed. How we deter & defend needs to change too.</p>
-        <p>Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
-        <a href="#">Learn more about our mission →</a>
-      </div>
-    </div>
-    <div class="mission-image">
-      <img src="assets/itsimage.png" alt="Mission Visual" />
-    </div>
+  <div class="video-container">
+    <video autoplay muted loop>
+      <source src="tesra-bg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <section class="mission-section">
+    <h2>Our Mission</h2>
+    <p>We strive to innovate and lead with cutting-edge solutions that drive the future of technology. At Tessra, our mission is to combine creativity with technology to craft a better tomorrow.</p>
   </section>
 
-  <!-- Innovation Section -->
-  <section class="info-section">
-    <div class="mission-block">
-      <div class="innovation-left">
-        <h2>Future Belongs to Innovation</h2>
-        <h1>We are at the forefront creating bots, tools, robots, and drones.</h1>
-      </div>
-    </div>
-    <div class="innovation-image">
-      <img src="assets/image1.png" alt="Innovation Visual" />
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="footer-grid">
-      <div>
-        <h4>ABOUT US</h4>
-        <ul>
-          <li>Mission</li>
-          <li>Careers</li>
-          <li>Leadership</li>
-          <li>Media</li>
-        </ul>
-      </div>
-      <div>
-        <h4>PRODUCTS</h4>
-        <ul>
-          <li>Robots</li>
-          <li>Multi-purpose Bots</li>
-          <li>Drones</li>
-        </ul>
-      </div>
-      <div>
-        <h4>CONTACT US</h4>
-        <ul>
-          <li>contact@tessraai.com</li>
-          <li>Hauz Khas, New Delhi, India</li>
-        </ul>
-      </div>
-    </div>
-    <div class="social-icons">
-      <a href="https://instagram.com/" target="_blank">📷</a>
-      <a href="https://github.com/Tesra-ai" target="_blank">💻</a>
-      <a href="https://facebook.com/" target="_blank">📘</a>
-    </div>
-    <p>&copy; 2025 Tessra AI. All rights reserved.</p>
-  </footer>
+  <div class="image-section">
+    <img src="itsimage.png" alt="Tessra Fullscreen Image">
+  </div>
 
 </body>
 </html>
