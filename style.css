@@ -6,7 +6,7 @@ body, html {
   background-color: #f9f9f9;
   color: #111;
   overflow-x: hidden;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 /* Chrome/Edge */
@@ -22,14 +22,12 @@ body::-webkit-scrollbar {
   right: 0;
   display: flex;
   padding: 0.5rem 1rem;
-  box-sizing: border-box;   
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   background-color: #000;
   z-index: 10;
 }
-
-
 
 /* Logo */
 .logo {
@@ -41,28 +39,27 @@ body::-webkit-scrollbar {
 
 /* Navbar */
 .navbar {
- display: flex;
+  display: flex;
   gap: 20px;
-  
 }
 
 .navbar a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  
 }
 
 @media (max-width: 600px) {
-  .navbar{
+  .navbar {
     gap: 10px;
   }
-  
-.logo {
-  font-size: 1.5rem;
+
+  .logo {
+    font-size: 1.5rem;
   }
 }
-/* Background video */
+
+/* Background Video */
 #bg-video {
   margin-top: 0;
   width: 100vw;
@@ -94,12 +91,10 @@ body::-webkit-scrollbar {
   padding: 0 2rem;
 }
 
-
 .mission-left,
 .mission-right {
   flex: 1;
 }
-
 
 .mission-left h2 {
   font-size: 2rem;
@@ -113,10 +108,6 @@ body::-webkit-scrollbar {
   color: #000;
   max-width: 500px;
   line-height: 1.25;
-}
-
-.mission-right {
-  padding-top: 3rem; /* Adjust this for vertical alignment */
 }
 
 .mission-right p {
