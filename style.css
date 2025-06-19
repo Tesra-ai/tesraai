@@ -1,181 +1,342 @@
-/* General Reset */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #111;
-  overflow-x: hidden;
-  scrollbar-width: none;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESSRA AI | Autonomous Defense</title>
+    <style>
+        /* General Reset */
+        body, html {
+          margin: 0;
+          padding: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #f9f9f9;
+          color: #111;
+          overflow-x: hidden;
+          scrollbar-width: none; /* Firefox */
+        }
 
-/* Chrome/Edge */
-body::-webkit-scrollbar {
-  display: none;
-}
+        /* Chrome/Edge/Safari */
+        body::-webkit-scrollbar {
+          display: none;
+        }
 
-/* Header */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  padding: 0.5rem 1rem;
-  box-sizing: border-box;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000;
-  z-index: 10;
-}
+        /* Header */
+        .site-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          display: flex;
+          padding: 0.5rem 2rem; /* Added more horizontal padding */
+          box-sizing: border-box;
+          justify-content: space-between;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+          backdrop-filter: blur(10px); /* Frosted glass effect */
+          -webkit-backdrop-filter: blur(10px); /* For Safari */
+          z-index: 10;
+          transition: background-color 0.3s ease;
+        }
 
-/* Logo */
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  letter-spacing: 1px;
-}
+        /* Optional: Change header background on scroll */
+        .site-header-scrolled {
+            background-color: #000;
+        }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  gap: 20px;
-}
 
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
+        /* Logo */
+        .logo {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #fff;
+          letter-spacing: 1px;
+        }
 
-@media (max-width: 600px) {
-  .navbar {
-    gap: 10px;
-  }
+        /* Navbar */
+        .navbar {
+          display: flex;
+          gap: 20px;
+        }
 
-  .logo {
-    font-size: 1.5rem;
-  }
-}
+        .navbar a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: 600;
+          padding: 5px 10px;
+          border-radius: 4px;
+          transition: background-color 0.3s ease;
+        }
 
-/* Background Video */
-#bg-video {
-  margin-top: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  display: block;
-}
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
-/* Mission Section */
-.info-section {
-  background-color: #f0f0f0;
-  color: #111;
-  padding: 7rem 2rem 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-}
+        @media (max-width: 600px) {
+          .navbar {
+            gap: 10px;
+          }
+          .logo {
+            font-size: 1.5rem;
+          }
+          .site-header {
+            padding: 0.5rem 1rem;
+          }
+        }
 
-.mission-block {
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start !important;
-  gap: 4rem;
-  margin: 3rem auto;
-  padding: 0 2rem;
-}
+        /* Hero Section with Background Video */
+        .hero-section {
+            position: relative;
+            height: 60vh; /* Adjust height as needed */
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.mission-left,
-.mission-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
 
-.mission-left h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
+        /* Mission Section */
+        .info-section {
+          background-color: #f0f0f0;
+          color: #111;
+          padding: 5rem 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
 
-.mission-left h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #000;
-  max-width: 500px;
-  line-height: 1.25;
-}
+        .info-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
 
-.mission-right p {
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 500px;
-  margin-bottom: 1rem;
-}
+        .mission-block {
+          max-width: 1200px;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 4rem;
+          margin: 0 auto;
+          padding: 0 2rem;
+          text-align: left;
+          box-sizing: border-box;
+        }
 
-.mission-right a {
-  font-weight: 600;
-  color: #000;
-  text-decoration: underline;
-}
+        .mission-left,
+        .mission-right {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
 
-.mission-image {
-  max-width: 1000px;
-  margin-top: 2rem;
-}
+        .mission-left h2 {
+          font-size: 2.25rem;
+          font-weight: 700;
+          color: #000;
+          max-width: 500px;
+          line-height: 1.25;
+        }
 
-.mission-image img {
-  width: 100%;
-  border-radius: 12px;
-}
+        .mission-right p {
+          font-size: 1rem;
+          line-height: 1.6;
+          max-width: 500px;
+          margin-bottom: 1rem;
+        }
 
-/* Footer */
-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 3rem 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+        .mission-right a {
+          font-weight: 600;
+          color: #000;
+          text-decoration: none; /* Changed from underline for a cleaner look */
+          border-bottom: 2px solid #000; /* Underline with space */
+          padding-bottom: 2px;
+          transition: opacity 0.3s ease;
+        }
+        .mission-right a:hover {
+            opacity: 0.7;
+        }
 
-.footer-column {
-  flex: 1;
-  min-width: 200px;
-  margin: 1rem;
-}
+        /* Media query for stacking columns on smaller screens */
+        @media (max-width: 768px) {
+            .mission-block {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
+            }
+            .mission-left, .mission-right {
+                align-items: center;
+            }
+             .mission-left h2 {
+                text-align: center;
+             }
+        }
 
-.footer-column h4 {
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
+        .mission-image {
+          max-width: 1200px; /* Wider image */
+          width: 100%;
+          padding: 0 2rem;
+          box-sizing: border-box;
+          margin: 4rem auto 0;
+        }
 
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-}
+        .mission-image img {
+          width: 100%;
+          border-radius: 12px;
+        }
 
-.footer-column ul li {
-  margin-bottom: 0.5rem;
-}
+        /* Footer */
+        footer {
+          background-color: #000;
+          color: #fff;
+          padding: 3rem 2rem;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 2rem;
+        }
 
-.footer-column ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 400;
-}
+        .footer-column {
+          flex: 1;
+          min-width: 200px;
+          margin: 1rem;
+        }
 
-.footer-bottom {
-  width: 100%;
-  text-align: center;
-  margin-top: 2rem;
-  border-top: 1px solid #333;
-  padding-top: 1rem;
-  font-size: 0.9rem;
-} 
+        .footer-column h4 {
+          margin-bottom: 1rem;
+          font-weight: 600;
+          color: #fff;
+        }
+
+        .footer-column ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-column ul li {
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+          color: #aaa; /* Lighter grey for links */
+          text-decoration: none;
+          font-weight: 400;
+          transition: color 0.3s ease;
+        }
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+          width: 100%;
+          text-align: center;
+          margin-top: 2rem;
+          border-top: 1px solid #333;
+          padding-top: 2rem; /* More space */
+          font-size: 0.9rem;
+          color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo">TESSRA AI</div>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Mission</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <video autoplay muted loop playsinline id="bg-video">
+                <source src="path/to/your/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section class="info-section">
+            <h1>Our Mission</h1>
+            <div class="mission-block">
+                <div class="mission-left">
+                    <h2>Transforming defense capabilities with advanced technology.</h2>
+                </div>
+                <div class="mission-right">
+                    <p>The battlefield has changed. How we deter & defend needs to change too.</p>
+                    <p>Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
+                    <a href="#">Learn more about our mission →</a>
+                </div>
+            </div>
+            <div class="mission-image">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="#">Platform</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Technology</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 TESSRA AI. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Optional JavaScript to change header background on scroll
+        const header = document.querySelector('.site-header');
+        window.onscroll = function() {
+            if (window.scrollY > 50) {
+                header.classList.add('site-header-scrolled');
+            } else {
+                header.classList.remove('site-header-scrolled');
+            }
+        };
+    </script>
+
+</body>
+</html>
