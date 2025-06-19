@@ -9,8 +9,9 @@
     body, html {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
     }
 
     #bg-video {
@@ -31,48 +32,78 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(255, 255, 255, 0.95);
       z-index: 10;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #222;
+      letter-spacing: 1px;
     }
 
     .navbar a {
       margin-left: 20px;
-      color: #fff;
+      color: #333;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
     }
 
     .info-section {
-      background-color: #fff;
+      background-color: #f0f0f0;
       color: #111;
-      padding: 4rem 2rem;
+      padding: 6rem 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
     }
 
-    .info-section h2 {
-      text-align: center;
-      font-size: 2.5rem;
+    .mission-block {
+      max-width: 1100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
       margin-bottom: 3rem;
     }
 
-    .info-block {
-      max-width: 900px;
-      margin: 0 auto 3rem;
+    .mission-left h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
     }
 
-    .info-block h3 {
-      font-size: 1.8rem;
+    .mission-left h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000;
+      max-width: 500px;
+    }
+
+    .mission-right p {
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 500px;
       margin-bottom: 1rem;
     }
 
-    .info-block p {
-      font-size: 1rem;
-      line-height: 1.6;
+    .mission-right a {
+      font-weight: 600;
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .mission-image {
+      max-width: 1000px;
+      margin-top: 2rem;
+    }
+
+    .mission-image img {
+      width: 100%;
+      border-radius: 12px;
     }
 
     footer {
@@ -82,31 +113,18 @@
       text-align: center;
     }
 
-    footer h3 {
-      margin-bottom: 1rem;
-    }
-
     .social-icons a {
       margin: 0 10px;
       color: #fff;
       font-size: 1.5rem;
       text-decoration: none;
     }
-
-    @media screen and (max-width: 768px) {
-      .site-header {
-        flex-direction: column;
-      }
-      .navbar {
-        margin-top: 1rem;
-      }
-    }
   </style>
 </head>
 <body>
 
   <!-- Background Video -->
-  <video autoplay muted loop id="bg-video" playsinline preload="auto">
+  <video autoplay muted loop id="bg-video" playsinline>
     <source src="assets/tesra-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
@@ -115,41 +133,27 @@
   <header class="site-header">
     <div class="logo">TESRA AI</div>
     <nav class="navbar">
-      <a href="#drones">Drones</a>
-      <a href="#arms">Robotic Arms</a>
-      <a href="#combat">Combat Bots</a>
-      <a href="#research">Research</a>
+      <a href="#">Home</a>
+      <a href="#mission">Mission</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Info Blocks Section -->
-  <section class="info-section">
-    <h2>Our Mission</h2>
-
-    <div class="info-block" id="drones">
-      <h3>Autonomous Drones</h3>
-      <p>AI-guided drones for high-precision surveillance and tactical operations in combat zones. Engineered for stealth, long-range endurance, and real-time battlefield intelligence.</p>
+  <!-- Info Section (Mission) -->
+  <section class="info-section" id="mission">
+    <div class="mission-block">
+      <div class="mission-left">
+        <h2>Our Mission</h2>
+        <h1>Transforming defense capabilities with advanced technology.</h1>
+      </div>
+      <div class="mission-right">
+        <p>The battlefield has changed. How we deter & defend needs to change too.</p>
+        <p>Security threats are evolving at machine speed. To keep pace, Tesra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
+        <a href="#">Learn more about our mission →</a>
+      </div>
     </div>
-
-    <div class="info-block" id="arms">
-      <h3>Robotic Arms</h3>
-      <p>Designed for battlefield repair, bomb defusal, and surgical operations under hostile conditions. Built for speed, accuracy, and resilience in combat environments.</p>
-    </div>
-
-    <div class="info-block" id="combat">
-      <h3>Combat Robotics</h3>
-      <p>Autonomous armored bots for ground operations, threat detection, and active engagement. Features self-repair capabilities and adaptive AI combat strategy.</p>
-    </div>
-
-    <div class="info-block" id="research">
-      <h3>AI Core & Cyber Systems</h3>
-      <p>Real-time enemy behavior prediction, tactical decision-making, and multi-domain coordination powered by AI cloud infrastructure. Fully encrypted and autonomous.</p>
-    </div>
-
-    <div class="info-block">
-      <h3>Satellite Coordination</h3>
-      <p>AI-mesh synced with satellites for long-range support, precision missile guidance, and real-time situational awareness across global theaters.</p>
+    <div class="mission-image">
+      <img src="assets/itsimage.png" alt="Mission Visual" />
     </div>
   </section>
 
