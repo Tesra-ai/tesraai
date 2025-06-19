@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tessra AI | Autonomous Defense Systems</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     /* Disable scrollbar but keep scroll functionality */
     html, body {
@@ -20,7 +19,7 @@
       display: none; /* Chrome, Safari */
     }
 
-    /* Transparent header */
+    /* Black header with white text */
     .site-header {
       position: fixed;
       top: 0;
@@ -29,9 +28,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: transparent;
-      box-shadow: none;
-      backdrop-filter: none;
+      background-color: #000;
       z-index: 1000;
     }
 
@@ -163,7 +160,7 @@
 </head>
 <body>
 
-  <!-- Transparent Header -->
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">TESSRA AI</div>
     <nav class="navbar">
@@ -173,7 +170,7 @@
     </nav>
   </header>
 
-  <!-- Background Video (no spacing below header) -->
+  <!-- Background Video -->
   <video autoplay muted loop id="bg-video" playsinline>
     <source src="assets/tesra-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
