@@ -2,13 +2,14 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-}
-body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #111;
   overflow-x: hidden;
+  scrollbar-width: none;
 }
+
+/* Chrome/Edge */
 body::-webkit-scrollbar {
   display: none;
 }
@@ -17,27 +18,45 @@ body::-webkit-scrollbar {
 .site-header {
   position: fixed;
   top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
+  left: 0;
+  right: 0;
   display: flex;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   background-color: #000;
   z-index: 10;
 }
+
+/* Logo */
 .logo {
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
+  letter-spacing: 1px;
 }
+
+/* Navbar */
 .navbar {
   display: flex;
   gap: 20px;
 }
+
 .navbar a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
 }
 
 /* Background Video */
@@ -47,6 +66,7 @@ body::-webkit-scrollbar {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+  display: block;
 }
 
 /* Mission Section */
@@ -54,22 +74,36 @@ body::-webkit-scrollbar {
   background-color: #f0f0f0;
   color: #111;
   padding: 7rem 2rem 4rem;
-}
-.mission-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: left;
-  font-size: 2rem;
-  font-weight: 500;
-  max-width: 1200px;
-  margin: 0 auto 2rem auto;
 }
+
 .mission-block {
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start !important;
   gap: 4rem;
+  margin: 3rem auto;
+  padding: 0 2rem;
 }
+
+.mission-left,
+.mission-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.mission-left h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
 .mission-left h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -77,21 +111,25 @@ body::-webkit-scrollbar {
   max-width: 500px;
   line-height: 1.25;
 }
+
 .mission-right p {
   font-size: 1rem;
   line-height: 1.6;
   max-width: 500px;
   margin-bottom: 1rem;
 }
+
 .mission-right a {
   font-weight: 600;
   color: #000;
   text-decoration: underline;
 }
+
 .mission-image {
   max-width: 1000px;
-  margin: 2rem auto 0 auto;
+  margin-top: 2rem;
 }
+
 .mission-image img {
   width: 100%;
   border-radius: 12px;
@@ -106,27 +144,33 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .footer-column {
   flex: 1;
   min-width: 200px;
   margin: 1rem;
 }
+
 .footer-column h4 {
   margin-bottom: 1rem;
   font-weight: 600;
 }
+
 .footer-column ul {
   list-style: none;
   padding: 0;
 }
+
 .footer-column ul li {
   margin-bottom: 0.5rem;
 }
+
 .footer-column ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 400;
 }
+
 .footer-bottom {
   width: 100%;
   text-align: center;
@@ -134,18 +178,4 @@ footer {
   border-top: 1px solid #333;
   padding-top: 1rem;
   font-size: 0.9rem;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .mission-block {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .mission-header {
-    font-size: 1.75rem;
-  }
-  .mission-left h1 {
-    font-size: 2rem;
-  }
-}
+} where the fuck has it cahnged  
