@@ -84,13 +84,22 @@ body::-webkit-scrollbar {
 }
 
 .mission-block {
-  max-width: 1100px;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 3rem;
+  gap: 4rem;
+  margin: 3rem auto;
+  padding: 0 2rem;
 }
+
+
+.mission-left,
+.mission-right {
+  flex: 1;
+}
+
 
 .mission-left h2 {
   font-size: 2rem;
@@ -103,6 +112,11 @@ body::-webkit-scrollbar {
   font-weight: 700;
   color: #000;
   max-width: 500px;
+  line-height: 1.25;
+}
+
+.mission-right {
+  padding-top: 3rem; /* Adjust this for vertical alignment */
 }
 
 .mission-right p {
