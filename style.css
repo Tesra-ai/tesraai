@@ -28,15 +28,7 @@ body::-webkit-scrollbar {
   z-index: 10;
 }
 
-/* ✅ Fix container to prevent content cut-off */
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 /* Logo */
 .logo {
