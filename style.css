@@ -1,19 +1,31 @@
-/* Hide scrollbar */
-html, body {
+/* Reset & base styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden; /* disables scroll bar */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #111;
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
 }
 
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+/* Background Video Styling */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
-/* Header Styles */
+/* Header */
 .site-header {
   position: fixed;
   top: 0;
@@ -22,7 +34,7 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000; /* Solid black header */
+  background-color: #000; /* solid black */
   z-index: 1000;
 }
 
@@ -40,27 +52,17 @@ body::-webkit-scrollbar {
   font-weight: 600;
 }
 
-/* Background video */
-#bg-video {
-  margin-top: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  display: block;
-  position: relative;
-  top: 0;
-}
-
-/* Section styling */
+/* Mission Section */
 .info-section {
-  background-color: #f0f0f0;
-  color: #111;
+  background-color: transparent;
+  color: #fff;
   padding: 7rem 2rem 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
+  z-index: 10;
+  position: relative;
 }
 
 .mission-block {
@@ -81,7 +83,7 @@ body::-webkit-scrollbar {
 .mission-left h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   max-width: 500px;
 }
 
@@ -90,14 +92,16 @@ body::-webkit-scrollbar {
   line-height: 1.6;
   max-width: 500px;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .mission-right a {
   font-weight: 600;
-  color: #000;
+  color: #fff;
   text-decoration: underline;
 }
 
+/* Mission Image */
 .mission-image {
   max-width: 1000px;
   margin-top: 2rem;
@@ -108,7 +112,7 @@ body::-webkit-scrollbar {
   border-radius: 12px;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
   background-color: #000;
   color: #fff;
@@ -116,6 +120,8 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  z-index: 100;
+  position: relative;
 }
 
 .footer-column {
@@ -152,3 +158,5 @@ footer {
   padding-top: 1rem;
   font-size: 0.9rem;
 }
+
+
