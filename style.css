@@ -9,7 +9,7 @@ body, html {
   scrollbar-width: none;
 }
 
-/* Chrome/Edge scrollbar fix */
+/* Chrome/Edge */
 body::-webkit-scrollbar {
   display: none;
 }
@@ -22,6 +22,7 @@ body::-webkit-scrollbar {
   right: 0;
   display: flex;
   padding: 0.5rem 1rem;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   background-color: #000;
@@ -84,21 +85,22 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
+  align-items: flex-start !important;
   gap: 4rem;
   margin: 3rem auto;
   padding: 0 2rem;
 }
 
-.mission-left {
-  flex: 1;
-  position: relative;
+.mission-left,
+.mission-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.mission-subtitle {
-  position: absolute;
-  top: -2rem;
+.mission-left h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
   font-weight: 500;
 }
 
@@ -108,11 +110,6 @@ body::-webkit-scrollbar {
   color: #000;
   max-width: 500px;
   line-height: 1.25;
-  margin: 0;
-}
-
-.mission-right {
-  flex: 1;
 }
 
 .mission-right p {
@@ -181,4 +178,4 @@ footer {
   border-top: 1px solid #333;
   padding-top: 1rem;
   font-size: 0.9rem;
-}
+} 
