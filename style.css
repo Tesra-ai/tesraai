@@ -56,9 +56,9 @@ body::-webkit-scrollbar {
   object-fit: cover;
 }
 
-/* MISSION SECTIONS */
+/* INFO SECTIONS */
 .info-section {
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
   color: #111;
   padding: 4rem 2rem;
 }
@@ -112,10 +112,9 @@ body::-webkit-scrollbar {
   display: inline-block;
 }
 
-/* FULL IMAGE */
+/* IMAGE SECTION */
 .full-image-section {
   width: 100vw;
-  height: auto;
   margin: 0;
   padding: 0;
 }
@@ -124,11 +123,6 @@ body::-webkit-scrollbar {
   width: 100vw;
   height: auto;
   object-fit: cover;
-}
-
-/* DUPLICATE MISSION SPACING */
-.duplicate-mission {
-  margin: 3rem 0;
 }
 
 /* FOOTER */
@@ -174,3 +168,4 @@ footer {
   color: #ccc;
   text-decoration: none;
 }
+
