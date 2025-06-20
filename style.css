@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #a8a8a8;
+  background-color: #9a8f8f;
   color: #111;
   overflow-x: hidden;
 }
@@ -58,18 +58,18 @@ body::-webkit-scrollbar {
 
 /* MISSION */
 .info-section {
-  background-color: #f0f0f0;
+  background-color: #a8a8a8;
   color: #111;
   padding: 10rem 2rem;
 }
 
 .mission-text {
-  font-size: 2rem; /* Increase this for larger text (1rem = normal) */
+  font-size: 3rem; /* Increase this for larger text (1rem = normal) */
   line-height: 1.7;
 }
 
 .mission-link {
-  font-size: 1.8rem; /* Increase link text too, if needed */
+  font-size: 1.5rem; /* Increase link text too, if needed */
   font-weight: 600;
   color: #f9f9f9;
 }
