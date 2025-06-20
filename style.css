@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #fafafa;
+  background-color: #a8a8a8;
   color: #111;
   overflow-x: hidden;
 }
@@ -64,12 +64,12 @@ body::-webkit-scrollbar {
 }
 
 .mission-text {
-  font-size: 1.25rem; /* Increase this for larger text (1rem = normal) */
+  font-size: 2rem; /* Increase this for larger text (1rem = normal) */
   line-height: 1.7;
 }
 
 .mission-link {
-  font-size: 1.25rem; /* Increase link text too, if needed */
+  font-size: 1.8rem; /* Increase link text too, if needed */
   font-weight: 600;
   color: #f9f9f9;
 }
