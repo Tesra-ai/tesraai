@@ -119,6 +119,12 @@ color: #aaa;
   max-width: 500px;
   margin-bottom: 1rem;
 }
+
+.mission-right p.mission-text {
+  font-size: 3rem !important;
+  line-height: 1.7 !important;
+}
+
 .mission-right a {
   font-weight: 600;
   color: #000;
