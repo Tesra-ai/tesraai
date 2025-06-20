@@ -143,6 +143,8 @@ color: #aaa;
   object-fit: cover;
 }
 
+
+
 /* FOOTER */
 footer {
   background-color: #000;
@@ -185,4 +187,63 @@ footer {
 .footer-bottom a {
   color: #ccc;
   text-decoration: none;
+}
+
+/* ROADRUNNER SECTION */
+.roadrunner-section {
+  background-color: #f4ecf1;
+  padding: 6rem 2rem;
+}
+
+.roadrunner-block {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+@media (min-width: 800px) {
+  .roadrunner-block {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.roadrunner-left {
+  flex: 1;
+}
+
+.roadrunner-left video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.roadrunner-right {
+  flex: 1;
+}
+
+.roadrunner-right h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.roadrunner-right p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.roadrunner-right a {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #000;
+  display: inline-block;
+  margin-top: 1rem;
 }
