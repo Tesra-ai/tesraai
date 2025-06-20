@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Tessra AI | Autonomous Defense Systems</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 /* General Reset */
 body, html {
@@ -13,9 +13,6 @@ body, html {
   background-color: #f9f9f9;
   color: #111;
   overflow-x: hidden;
-}
-body {
-  padding-top: 60px; /* Space for fixed header */
 }
 body::-webkit-scrollbar {
   display: none;
@@ -58,13 +55,14 @@ body::-webkit-scrollbar {
   }
 }
 
-/* Background Video */
+/* Video Section */
 #bg-video {
+  display: block;
+  margin: 0;
+  padding: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -1;
-  display: block;
 }
 
 /* Mission Section */
@@ -72,36 +70,35 @@ body::-webkit-scrollbar {
   background-color: #f0f0f0;
   color: #111;
   padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .mission-subtitle {
   font-size: 2rem;
   font-weight: 500;
-  text-align: left;
   max-width: 1200px;
-  width: 100%;
-  margin-bottom: 2rem;
+  margin: 0 auto 1rem auto;
+  padding: 0 2rem;
 }
 .mission-block {
   max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   gap: 4rem;
-  flex-wrap: wrap;
+  padding: 0 2rem;
 }
-.mission-left,
-.mission-right {
+.mission-left {
   flex: 1;
 }
 .mission-left h1 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #000;
-  max-width: 500px;
   line-height: 1.25;
+  max-width: 500px;
   margin: 0;
+}
+.mission-right {
+  flex: 1;
 }
 .mission-right p {
   font-size: 1rem;
@@ -175,9 +172,10 @@ footer {
   </nav>
 </header>
 
-<!-- Background Video -->
+<!-- Background Video (Starts Right After Header) -->
 <video autoplay muted loop id="bg-video" playsinline>
   <source src="assets/tesra-bg.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 <!-- Mission Section -->
