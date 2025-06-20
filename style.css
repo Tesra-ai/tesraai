@@ -1,4 +1,4 @@
-/* GENERAL RESET */
+/* General Reset */
 body, html {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* HEADER */
+/* Header */
 .site-header {
   position: fixed;
   top: 0;
@@ -28,7 +28,6 @@ body::-webkit-scrollbar {
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
-  letter-spacing: 1px;
 }
 .navbar {
   display: flex;
@@ -48,41 +47,31 @@ body::-webkit-scrollbar {
   }
 }
 
-/* VIDEO */
+/* Video Section */
 #bg-video {
   display: block;
+  margin: 0;
+  padding: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
 }
 
-/* INFO SECTIONS */
+/* Mission/Technology Sections */
 .info-section {
-  background-color: #f9f9f9;
+  background-color: #fff;
   color: #111;
   padding: 4rem 2rem;
 }
 .mission-subtitle {
   font-size: 2rem;
   font-weight: 500;
-  max-width: 1200px;
-  margin: 0 auto 1rem auto;
-  padding: 0 2rem;
 }
 .mission-block {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 0 2rem;
-}
-@media(min-width: 800px) {
-  .mission-block {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+  gap: 4rem;
 }
 .mission-left {
   flex: 1;
@@ -92,8 +81,6 @@ body::-webkit-scrollbar {
   font-weight: 700;
   color: #000;
   line-height: 1.25;
-  max-width: 500px;
-  margin: 0;
 }
 .mission-right {
   flex: 1;
@@ -101,31 +88,26 @@ body::-webkit-scrollbar {
 .mission-right p {
   font-size: 1rem;
   line-height: 1.6;
-  max-width: 500px;
-  margin-bottom: 1rem;
 }
 .mission-right a {
   font-weight: 600;
   color: #000;
   text-decoration: underline;
-  margin-bottom: 3rem;
-  display: inline-block;
 }
 
-/* IMAGE SECTION */
-.full-image-section {
+/* Images */
+.image-block {
   width: 100vw;
-  margin: 0;
-  padding: 0;
+  margin: 2rem 0;
 }
-.full-image-section img {
+.image-block img {
   display: block;
   width: 100vw;
   height: auto;
   object-fit: cover;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
   background-color: #000;
   color: #fff;
@@ -133,7 +115,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0;
 }
 .footer-column {
   flex: 1;
@@ -159,13 +140,8 @@ footer {
 .footer-bottom {
   width: 100%;
   text-align: center;
-  margin: 2rem 0 0 0;
+  margin-top: 4rem; /* DOUBLE space between Technology and Footer */
   border-top: 1px solid #333;
-  padding: 1rem 0;
+  padding-top: 1rem;
   font-size: 0.9rem;
 }
-.footer-bottom a {
-  color: #ccc;
-  text-decoration: none;
-}
-
