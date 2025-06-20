@@ -63,11 +63,6 @@ body::-webkit-scrollbar {
   padding: 10rem 2rem;
 }
 
-.mission-text {
-  font-size: 3rem; /* Increase this for larger text (1rem = normal) */
-  line-height: 1.7;
-}
-
 .mission-link {
   font-size: 1.5rem; /* Increase link text too, if needed */
   font-weight: 600;
