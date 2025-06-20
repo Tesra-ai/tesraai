@@ -22,3 +22,8 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
 });
+
+
+git add .
+git commit -m"ujsdh"
+git push origin main
