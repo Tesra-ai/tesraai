@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
 .info-section {
   background-color: #f4ecf1;
   color: #111;
-  padding: 10rem 2rem;
+  padding: 9rem 2rem;
 }
 
 .mission-link {
@@ -124,7 +124,7 @@ color: #aaa;
   font-weight: 600;
   color: #000;
   text-decoration: underline;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   display: inline-block;
 }
 
