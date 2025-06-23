@@ -257,65 +257,79 @@ footer {
 .roadrunner-link:hover {
   color: #555;
 }
-
-/* === Shield-AI Style Sliding Section === */
+/* SHIELD.AI Style Horizontal Panels */
 .three-panel-section {
   display: flex;
   justify-content: space-between;
-  background: #f0f0f0;
-  padding: 3rem 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  align-items: stretch;
+  margin: 4rem 1rem;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 }
 
 .panel {
   flex: 1;
-  padding: 1rem;
+  position: relative;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  overflow: hidden;
+  background-color: #f4f4f4;
   text-align: center;
-  border-left: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  padding: 2rem 1rem;
   transition: background 0.3s ease;
 }
 
 .panel:first-child {
   border-left: none;
 }
+.panel:last-child {
+  border-right: none;
+}
 
-.panel:hover {
-  background: #eee;
+.panel-content {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }
 
 .panel img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 1rem;
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 1;
 }
 
 .panel:hover img {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .panel-title {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .panel-text {
   font-size: 1rem;
-  color: #333;
-  max-width: 300px;
-  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
 }
 
 .read-more {
-  margin-top: 1rem;
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-decoration: underline;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-family: monospace;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+  display: inline-block;
+  cursor: pointer;
 }
+
