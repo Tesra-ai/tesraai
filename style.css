@@ -257,7 +257,7 @@ footer {
 .roadrunner-link:hover {
   color: #555;
 }
-/* SHIELD.AI Style Horizontal Panels */
+/* SHIELD.AI Style Horizontal Panels - UPDATED */
 .three-panel-section {
   display: flex;
   justify-content: space-between;
@@ -275,7 +275,8 @@ footer {
   overflow: hidden;
   background-color: #f4f4f4;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
+  height: 600px; /* doubled height */
   transition: background 0.3s ease;
 }
 
@@ -289,7 +290,7 @@ footer {
 .panel-content {
   position: relative;
   z-index: 2;
-  pointer-events: auto;
+  transition: opacity 0.3s ease;
 }
 
 .panel img {
@@ -305,9 +306,15 @@ footer {
   z-index: 1;
 }
 
+/* Hide text on hover */
 .panel:hover img {
   opacity: 1;
   transform: translateY(0);
+}
+
+.panel:hover .panel-content {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .panel-title {
@@ -332,4 +339,3 @@ footer {
   display: inline-block;
   cursor: pointer;
 }
-
