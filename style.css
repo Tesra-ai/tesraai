@@ -257,3 +257,65 @@ footer {
 .roadrunner-link:hover {
   color: #555;
 }
+
+/* === Shield-AI Style Sliding Section === */
+.three-panel-section {
+  display: flex;
+  justify-content: space-between;
+  background: #f0f0f0;
+  padding: 3rem 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.panel {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  border-left: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.panel:first-child {
+  border-left: none;
+}
+
+.panel:hover {
+  background: #eee;
+}
+
+.panel img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  display: none;
+}
+
+.panel:hover img {
+  display: block;
+}
+
+.panel-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.panel-text {
+  font-size: 1rem;
+  color: #333;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.read-more {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
