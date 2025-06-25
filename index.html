@@ -1,11 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tessra AI | Autonomous Defense Systems</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
+
+  <!-- Your Entire Existing Website Content Starts -->
 
   <!-- Header -->
   <header class="site-header">
@@ -25,6 +32,7 @@
 
   <!-- Mission Section -->
   <section class="info-section" id="mission">
+    <!-- Mission Content -->
     <h2 class="mission-subtitle">Our Mission</h2>
     <div class="mission-block">
       <div class="mission-left">
@@ -44,108 +52,94 @@
     <img src="assets/itsimage.png" alt="Its Image">
   </div>
 
-  <!-- Duplicated Mission Section (without the header) -->
-  <section class="info-section" style="margin: 0.8rem 1rem;">
-    <div class="mission-block">
-      <div class="mission-left">
-        <h1>Transforming defense<br>capabilities with advanced<br>technology.</h1>
+  <!-- Roadrunner Section -->
+  <section class="roadrunner-section">
+    <div class="roadrunner-block">
+      <div class="roadrunner-left">
+        <video autoplay muted loop playsinline class="roadrunner-video">
+          <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/wow.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
-      <div class="mission-right">
-        <p class="mission-text">The battlefield has changed. How we deter &amp; defend needs to change too.</p>
-        <p class="mission-text">Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
-        <a class="mission-link" href="#">Learn more about our mission →</a>
+      <div class="roadrunner-right">
+        <h3 class="roadrunner-title">Roadrunner</h3>
+        <h1 class="roadrunner-heading">Twin-Turbojet VTOL<br>Autonomous Air Vehicle (AAV)</h1>
+        <p class="roadrunner-text">
+          Roadrunner is a reusable vertical take-off and landing (VTOL) Autonomous Air Vehicle (AAV) with twin turbojet engines and modular payload configurations that can support a variety of missions.
+        </p>
+        <a href="#" class="roadrunner-link">Learn More About Roadrunner <span>&#8594;</span></a>
       </div>
     </div>
   </section>
 
-  <!-- Roadrunner Section (Inspired by Anduril style) -->
-<section class="roadrunner-section">
-  <div class="roadrunner-block">
-    <div class="roadrunner-left">
-      <video autoplay muted loop playsinline class="roadrunner-video">
-        <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/wow.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <!-- Shield AI 3 Panel Section -->
+  <section class="three-panel-section">
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-title">DARPA</div>
+        <div class="panel-text">Shield AI enabled the X-62 VISTA to autonomously fly and perform tactical maneuvers against human pilots.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image1.png" alt="DARPA">
     </div>
-    <div class="roadrunner-right">
-      <h3 class="roadrunner-title">Roadrunner</h3>
-      <h1 class="roadrunner-heading">Twin-Turbojet VTOL<br>Autonomous Air Vehicle (AAV)</h1>
-      <p class="roadrunner-text">
-        Roadrunner is a reusable vertical take-off and landing (VTOL) Autonomous Air Vehicle (AAV) with twin turbojet engines and modular payload configurations that can support a variety of missions.
-      </p>
-      <a href="#" class="roadrunner-link">Learn More About Roadrunner <span>&#8594;</span></a>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-title">MQ-20</div>
+        <div class="panel-text">Hivemind flies MQ-20 Avenger autonomously at Orange Flag test event, showcasing cutting-edge autonomy.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image2.png" alt="MQ-20">
     </div>
-  </div>
-</section>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-title">KRATOS</div>
+        <div class="panel-text">Shield AI conducted dual-ship autonomy tests using Kratos’ MQM-178 Firejet drones.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image3.png" alt="KRATOS">
+    </div>
+  </section>
 
-<!-- Shield-AI Style Horizontal Sliding Section -->
-<section class="three-panel-section">
-  <div class="panel">
-    <div class="panel-content">
-      <div class="panel-title">DARPA</div>
-      <div class="panel-text">Shield AI enabled the X-62 VISTA to autonomously fly and perform tactical maneuvers against human pilots.</div>
-      <div class="read-more">READ MORE</div>
-    </div>
-    <img src="assets/image1.png" alt="DARPA">
-  </div>
-  <div class="panel">
-    <div class="panel-content">
-      <div class="panel-title">MQ-20</div>
-      <div class="panel-text">Hivemind flies MQ-20 Avenger autonomously at Orange Flag test event, showcasing cutting-edge autonomy.</div>
-      <div class="read-more">READ MORE</div>
-    </div>
-    <img src="assets/image2.png" alt="MQ-20">
-  </div>
-  <div class="panel">
-    <div class="panel-content">
-      <div class="panel-title">KRATOS</div>
-      <div class="panel-text">Shield AI conducted dual-ship autonomy tests using Kratos’ MQM-178 Firejet drones.</div>
-      <div class="read-more">READ MORE</div>
-    </div>
-    <img src="assets/image3.png" alt="KRATOS">
-  </div>
-</section>
-
-<!-- Tessra AI Careers Section (Anduril Style) -->
-<section class="careers-section" style="margin-top: 3rem;">
-  <div class="careers-container">
-    <div class="careers-text">
-      <h2>Careers</h2>
-      <h1>Join us in creating<br>the future of<br>defense.</h1>
-      <p>
-        From light bulb to functional prototype in a week.<br>
-        An engineer’s playground where we make what<br>
-        we feel is right and needs to exist. A dedicated<br>
-        team rallying around a shared intention to make a<br>
-        positive impact by creating a safer world. That’s life<br>
-        at Tessra AI.
-      </p>
-      <a class="careers-link" href="#">Learn More →</a>
-    </div>
-    <div class="careers-images">
-      <img src="assets/ima1.png" alt="Careers Image 1" class="top-img">
-      <div class="bottom-imgs">
-        <img src="assets/ima2.png" alt="Careers Image 2">
-        <img src="assets/ima3.png" alt="Careers Image 3">
+  <!-- Careers Section -->
+  <section class="careers-section" style="margin-top: 3rem;">
+    <div class="careers-container">
+      <div class="careers-text">
+        <h2>Careers</h2>
+        <h1>Join us in creating<br>the future of<br>defense.</h1>
+        <p>
+          From light bulb to functional prototype in a week.<br>
+          An engineer’s playground where we make what<br>
+          we feel is right and needs to exist. A dedicated<br>
+          team rallying around a shared intention to make a<br>
+          positive impact by creating a safer world. That’s life<br>
+          at Tessra AI.
+        </p>
+        <a class="careers-link" href="#">Learn More →</a>
+      </div>
+      <div class="careers-images">
+        <img src="assets/ima1.png" alt="Careers Image 1" class="top-img">
+        <div class="bottom-imgs">
+          <img src="assets/ima2.png" alt="Careers Image 2">
+          <img src="assets/ima3.png" alt="Careers Image 3">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Partner Logos Moving Section -->
-<section class="partner-logos-section">
-  <div class="logo-slider">
-    <img src="assets/ima1.png" alt="Partner 1">
-    <img src="assets/ima2.png" alt="Partner 2">
-    <img src="assets/ima3.png" alt="Partner 3">
-    <img src="assets/ima4.png" alt="Partner 4">
-    <img src="assets/ima5.png" alt="Partner 5">
-  </div>
-</section>
-
+  <!-- Partner Logos Moving Section -->
+  <section class="partner-logos-section">
+    <div class="logo-slider">
+      <img src="assets/img1.png" alt="Logo 1">
+      <img src="assets/img2.png" alt="Logo 2">
+      <img src="assets/img3.png" alt="Logo 3">
+      <img src="assets/img4.png" alt="Logo 4">
+      <img src="assets/img5.png" alt="Logo 5">
+    </div>
+  </section>
 
   <!-- Footer Section -->
-  <footer id="contact" style="margin: 1rem 0 0 0;">
+  <footer id="contact">
+    <!-- Footer content here -->
     <div class="footer-column">
       <h4>ABOUT US</h4>
       <ul>
@@ -179,6 +173,81 @@
       <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
     </div>
   </footer>
+
+  <!-- GSAP ScrollTrigger Animations -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate main sections on scroll
+    gsap.utils.toArray(".info-section, .roadrunner-section, .three-panel-section, .careers-section, .partner-logos-section").forEach(section => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 80,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Animate individual panels
+    gsap.utils.toArray(".panel").forEach(panel => {
+      gsap.from(panel, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: panel,
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
+
+    // Roadrunner Video
+    gsap.from(".roadrunner-video", {
+      scale: 0.8,
+      opacity: 0,
+      duration: 1,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: ".roadrunner-video",
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // Careers images staggered
+    gsap.from(".careers-images img", {
+      opacity: 0,
+      y: 60,
+      stagger: 0.2,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".careers-images",
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    // Partner logos fade-in
+    gsap.from(".partner-logos-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".partner-logos-section",
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+    });
+  </script>
 
 </body>
 </html>
