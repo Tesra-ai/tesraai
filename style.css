@@ -423,3 +423,36 @@ footer {
     width: 100%;
   }
 }
+.partner-logos-section {
+  margin: 4rem 0; /* spacing from careers section */
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.logo-slider {
+  display: flex;
+  gap: 3rem;
+  animation: scroll-left 15s linear infinite;
+  align-items: center;
+}
+
+.logo-slider img {
+  height: 80px; /* Adjust logo size here */
+  object-fit: contain;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-slider img {
+    height: 50px;
+  }
+}
