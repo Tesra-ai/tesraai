@@ -456,3 +456,134 @@ footer {
     height: 50px;
   }
 }
+
+
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0e0e0e;
+  color: white;
+}
+a {
+  color: #00ffe7;
+  text-decoration: none;
+}
+
+/* === Header === */
+.site-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+/* === Video === */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4);
+}
+
+/* === Sections === */
+section {
+  padding: 6rem 10vw;
+  position: relative;
+  z-index: 1;
+}
+.mission-block,
+.roadrunner-block,
+.careers-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+.mission-left, .roadrunner-left, .careers-text { flex: 1; }
+.mission-right, .roadrunner-right, .careers-images { flex: 1; }
+
+/* === Panels === */
+.three-panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.panel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+}
+.panel img {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+/* === Careers === */
+.careers-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.bottom-imgs {
+  display: flex;
+  gap: 1rem;
+}
+.bottom-imgs img, .careers-images img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* === Logo Slider === */
+.logo-slider {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+}
+.logo-slider img {
+  max-height: 60px;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+.logo-slider img:hover {
+  filter: none;
+}
+
+/* === Footer === */
+footer {
+  background: #121212;
+  padding: 4rem 10vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.footer-bottom {
+  grid-column: span 3;
+  text-align: center;
+  margin-top: 2rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
