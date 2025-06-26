@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tessra AI | Autonomous Defense Systems</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
   <!-- Locomotive Scroll and GSAP -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+
+  <style>
+    html.has-scroll-smooth { overflow: hidden; }
+    [data-scroll-container] { opacity: 0; }
+  </style>
 </head>
 <body>
 
@@ -26,51 +31,108 @@
     </nav>
   </header>
 
-  <!-- Background Video (No Animations) -->
+  <!-- Background Video (No animation effects) -->
   <video autoplay muted loop id="bg-video" playsinline preload="auto">
     <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/tesra-bg.mp4" type="video/mp4">
   </video>
 
   <!-- Mission Section -->
-  <section class="info-section" id="mission">
-    <h2>Our Mission</h2>
-    <p>The battlefield has changed...</p>
+  <section class="info-section reveal" id="mission">
+    <h2 class="mission-subtitle">Our Mission</h2>
+    <div class="mission-block">
+      <div class="mission-left">
+        <h1>Transforming defense<br>capabilities with advanced<br>technology.</h1>
+      </div>
+      <div class="mission-right">
+        <p class="mission-text">The battlefield has changed. How we deter &amp; defend needs to change too.</p>
+        <p class="mission-text">Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
+        <a class="mission-link" href="#">Learn more about our mission →</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Full Images -->
+  <!-- Full Width Images -->
   <div class="full-image-section">
-    <img src="assets/image.png" alt="Image" />
-    <img src="assets/itsimage.png" alt="Its Image" />
+    <img class="reveal" src="assets/image1.png" alt="Tessra AI Image">
+    <img class="reveal" src="assets/itsimage.png" alt="Its Image">
   </div>
 
-  <!-- Three Panels -->
-  <section class="three-panel-section">
-    <div class="panel">Panel 1</div>
-    <div class="panel">Panel 2</div>
-    <div class="panel">Panel 3</div>
-  </section>
-
-  <!-- Careers -->
-  <section class="careers-section">
-    <div class="careers-images">
-      <img src="assets/ima1.png" alt="" />
-      <img src="assets/ima2.png" alt="" />
-      <img src="assets/ima3.png" alt="" />
+  <!-- Roadrunner Section -->
+  <section class="roadrunner-section reveal">
+    <div class="roadrunner-block">
+      <div class="roadrunner-left">
+        <video autoplay muted loop playsinline class="roadrunner-video">
+          <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/wow.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="roadrunner-right">
+        <h3 class="roadrunner-title">Roadrunner</h3>
+        <h1 class="roadrunner-heading">Twin-Turbojet VTOL<br>Autonomous Air Vehicle (AAV)</h1>
+        <p class="roadrunner-text">Roadrunner is a reusable vertical take-off and landing (VTOL) Autonomous Air Vehicle (AAV) with twin turbojet engines and modular payload configurations.</p>
+        <a href="#" class="roadrunner-link">Learn More About Roadrunner →</a>
+      </div>
     </div>
   </section>
 
-  <!-- Partner Logos (Continuous Scroll) -->
+  <!-- Three Panel Section -->
+  <section class="three-panel-section">
+    <div class="panel reveal">
+      <div class="panel-content">
+        <div class="panel-title">DARPA</div>
+        <div class="panel-text">Shield AI enabled the X-62 VISTA to autonomously fly and perform tactical maneuvers against human pilots.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image1.png" alt="DARPA">
+    </div>
+    <div class="panel reveal">
+      <div class="panel-content">
+        <div class="panel-title">MQ-20</div>
+        <div class="panel-text">Hivemind flies MQ-20 Avenger autonomously at Orange Flag test event.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image2.png" alt="MQ-20">
+    </div>
+    <div class="panel reveal">
+      <div class="panel-content">
+        <div class="panel-title">KRATOS</div>
+        <div class="panel-text">Shield AI conducted dual-ship autonomy tests using Kratos’ MQM-178 Firejet drones.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image3.png" alt="KRATOS">
+    </div>
+  </section>
+
+  <!-- Careers Section -->
+  <section class="careers-section reveal">
+    <div class="careers-container">
+      <div class="careers-text">
+        <h2>Careers</h2>
+        <h1>Join us in creating<br>the future of<br>defense.</h1>
+        <p>From light bulb to functional prototype in a week.<br>A team rallying around a shared intention to make a<br>positive impact by creating a safer world. That’s life<br>at Tessra AI.</p>
+        <a class="careers-link" href="#">Learn More →</a>
+      </div>
+      <div class="careers-images">
+        <img src="assets/ima1.png" alt="Careers Image 1" class="top-img">
+        <div class="bottom-imgs">
+          <img src="assets/ima2.png" alt="Careers Image 2">
+          <img src="assets/ima3.png" alt="Careers Image 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Logos (Continuous Scroll, No Fade) -->
   <section class="partner-logos-section">
     <div class="logo-slider">
-      <img src="assets/logo1.png" alt="Logo 1" />
-      <img src="assets/logo2.png" alt="Logo 2" />
-      <img src="assets/logo3.png" alt="Logo 3" />
-      <img src="assets/logo4.png" alt="Logo 4" />
-      <img src="assets/logo5.png" alt="Logo 5" />
+      <img src="assets/img1.png" alt="Logo 1">
+      <img src="assets/img2.png" alt="Logo 2">
+      <img src="assets/img3.png" alt="Logo 3">
+      <img src="assets/img4.png" alt="Logo 4">
+      <img src="assets/img5.png" alt="Logo 5">
     </div>
   </section>
 
-  <!-- Full Footer -->
+  <!-- Footer -->
   <footer id="contact">
     <div class="footer-column">
       <h4>ABOUT US</h4>
@@ -111,91 +173,39 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  const locoScroll = new LocomotiveScroll({
+  const loco = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true
   });
 
-  locoScroll.on("scroll", ScrollTrigger.update);
+  loco.on('scroll', ScrollTrigger.update);
 
-  ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+  ScrollTrigger.scrollerProxy('[data-scroll-container]', {
     scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+      return arguments.length ? loco.scrollTo(value, 0, 0) : loco.scroll.instance.scroll.y;
     },
     getBoundingClientRect() {
       return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
     },
-    pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+    pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
   });
 
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+  ScrollTrigger.addEventListener('refresh', () => loco.update());
   ScrollTrigger.refresh();
 
-  // General Fade-in Sections
-  gsap.utils.toArray(".info-section, .three-panel-section, .careers-section, .full-image-section").forEach(section => {
-    gsap.from(section, {
+  gsap.utils.toArray(".reveal").forEach((el, index) => {
+    gsap.from(el, {
       scrollTrigger: {
-        trigger: section,
         scroller: "[data-scroll-container]",
+        trigger: el,
         start: "top 85%",
-      },
-      autoAlpha: 0,
-      y: 100,
-      duration: 1.2,
-      ease: "power2.out"
-    });
-  });
-
-  // Full Images (image.png & itsimage.png)
-  gsap.from(".full-image-section img", {
-    scrollTrigger: {
-      trigger: ".full-image-section",
-      scroller: "[data-scroll-container]",
-      start: "top 85%",
-    },
-    autoAlpha: 0,
-    y: 50,
-    stagger: 0.2,
-    duration: 1,
-    ease: "power2.out"
-  });
-
-  // Panels Stagger
-  gsap.utils.toArray(".panel").forEach((panel, i) => {
-    gsap.from(panel, {
-      scrollTrigger: {
-        trigger: panel,
-        scroller: "[data-scroll-container]",
-        start: "top 90%",
       },
       autoAlpha: 0,
       y: 60,
       duration: 1,
-      delay: i * 0.2,
-      ease: "power3.out"
+      ease: "power2.out",
+      delay: index * 0.1
     });
-  });
-
-  // Careers Images Stagger
-  gsap.from(".careers-images img", {
-    scrollTrigger: {
-      trigger: ".careers-images",
-      scroller: "[data-scroll-container]",
-      start: "top 90%",
-    },
-    autoAlpha: 0,
-    y: 40,
-    stagger: 0.2,
-    duration: 1,
-    ease: "power2.out"
-  });
-
-  // Partner Logos Infinite Left Scroll (No ScrollTrigger)
-  gsap.to(".logo-slider", {
-    xPercent: -50,
-    repeat: -1,
-    duration: 20,
-    ease: "linear"
   });
 </script>
 
