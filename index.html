@@ -40,6 +40,7 @@
 
   <!-- Mission Section -->
   <section class="info-section" id="mission">
+     <div class="fade-content">
     <h2 class="mission-subtitle">Our Mission</h2>
     <div class="mission-block">
       <div class="mission-left">
@@ -61,6 +62,7 @@
 
   <!-- Roadrunner Section -->
   <section class="roadrunner-section">
+    <div class="fade-content">
     <div class="roadrunner-block">
       <div class="roadrunner-left">
         <video autoplay muted loop playsinline class="roadrunner-video">
@@ -78,6 +80,7 @@
 
   <!-- Three Panel Section -->
   <section class="three-panel-section">
+    <div class="fade-content">
     <div class="panel">
       <div class="panel-content">
         <div class="panel-title">DARPA</div>
@@ -106,6 +109,7 @@
 
   <!-- Careers Section -->
   <section class="careers-section">
+    <div class="fade-content"></div>
     <div class="careers-container">
       <div class="careers-text">
         <h2>Careers</h2>
@@ -218,21 +222,22 @@
 });
 
 
-
-  gsap.utils.toArray(".info-section, .roadrunner-section, .three-panel-section, .careers-section, .partner-logos-section").forEach(section => {
-    gsap.from(section, {
-      scrollTrigger: {
-        scroller: "[data-scroll-container]",
-        trigger: section,
-        start: "top 85%",
-      },
-      autoAlpha: 0,
-      y: 100,
-      duration: 1.2,
-      ease: "power2.out",
-      delay: 0.2
-    });
+// Section Content Fade In (Only inner content, not background)
+gsap.utils.toArray(".fade-content").forEach(content => {
+  gsap.from(content, {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: content,
+      start: "top 85%",
+    },
+    autoAlpha: 0,
+    y: 100,
+    duration: 1.2,
+    ease: "power2.out",
+    delay: 0.2
   });
+});
+  
 
   // Stagger panels with Anduril-like delay
   gsap.utils.toArray(".panel").forEach((panel, index) => {
