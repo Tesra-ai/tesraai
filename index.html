@@ -15,98 +15,13 @@
   <style>
     html.has-scroll-smooth { overflow: hidden; }
     [data-scroll-container] { opacity: 0; }
-
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 10;
-      background: rgba(0,0,0,0.8);
-      color: white;
-    }
-
-    .navbar a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .info-section,
-    .roadrunner-section,
-    .three-panel-section,
-    .careers-section,
-    .full-image-section {
-      padding: 100px 20px;
-      min-height: 100vh;
-    }
-
-    .full-image-section img {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .partner-logos-section {
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 40px 0;
-      background: #f0f0f0;
-    }
-
-    .logo-slider {
-      display: inline-block;
-      white-space: nowrap;
-      animation: scroll-left 20s linear infinite;
-    }
-
-    .logo-slider img {
-      height: 80px;
-      margin: 0 30px;
-      vertical-align: middle;
-    }
-
-    @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .panel {
-      background: #ddd;
-      margin: 20px;
-      padding: 40px;
-      text-align: center;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #222;
-      color: white;
-      padding: 40px 20px;
-    }
   </style>
 </head>
 <body>
 
 <main data-scroll-container>
+
+  <!-- Your Full Original Content Starts -->
 
   <!-- Header -->
   <header class="site-header">
@@ -118,26 +33,34 @@
     </nav>
   </header>
 
-  <!-- Background Video (No fade effect) -->
+  <!-- Background Video -->
   <video autoplay muted loop id="bg-video" playsinline preload="auto">
     <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/tesra-bg.mp4" type="video/mp4">
   </video>
 
   <!-- Mission Section -->
-  <section class="info-section reveal" id="mission">
-    <!-- Your mission content here -->
+  <section class="info-section" id="mission">
+    <h2 class="mission-subtitle">Our Mission</h2>
+    <div class="mission-block">
+      <div class="mission-left">
+        <h1>Transforming defense<br>capabilities with advanced<br>technology.</h1>
+      </div>
+      <div class="mission-right">
+        <p class="mission-text">The battlefield has changed. How we deter &amp; defend needs to change too.</p>
+        <p class="mission-text">Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
+        <a class="mission-link" href="#">Learn more about our mission →</a>
+      </div>
+    </div>
   </section>
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img class="reveal" src="assets/image1.png" alt="Tessra AI Image">
-    <img class="reveal" src="assets/itsimage.png" alt="Its Image">
+    <img src="assets/image1.png" alt="Tessra AI Image">
+    <img src="assets/itsimage.png" alt="Its Image">
   </div>
 
   <!-- Roadrunner Section -->
-  <section class="roadrunner-section reveal">
-    <!-- Your Roadrunner content here -->
-     <section class="roadrunner-section">
+  <section class="roadrunner-section">
     <div class="roadrunner-block">
       <div class="roadrunner-left">
         <video autoplay muted loop playsinline class="roadrunner-video">
@@ -151,54 +74,73 @@
         <a href="#" class="roadrunner-link">Learn More About Roadrunner →</a>
       </div>
     </div>
-
   </section>
 
   <!-- Three Panel Section -->
   <section class="three-panel-section">
-    <div class="panel reveal"><!-- Panel 1 --></div>
-    <div class="panel reveal"><!-- Panel 2 --></div>
-    <div class="panel reveal"><!-- Panel 3 --></div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-title">DARPA</div>
+        <div class="panel-text">Shield AI enabled the X-62 VISTA to autonomously fly and perform tactical maneuvers against human pilots.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image1.png" alt="DARPA">
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-title">MQ-20</div>
+        <div class="panel-text">Hivemind flies MQ-20 Avenger autonomously at Orange Flag test event.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image2.png" alt="MQ-20">
+    </div>
+    <div class="panel">
+      <div class="panel-content">
+        <div class="panel-title">KRATOS</div>
+        <div class="panel-text">Shield AI conducted dual-ship autonomy tests using Kratos’ MQM-178 Firejet drones.</div>
+        <div class="read-more">READ MORE</div>
+      </div>
+      <img src="assets/image3.png" alt="KRATOS">
+    </div>
   </section>
 
   <!-- Careers Section -->
-  <section class="careers-section reveal">
-    <!-- Careers content here -->
-    <h2 class="mission-subtitle">Our Mission</h2>
-    <div class="mission-block">
-      <div class="mission-left">
-        <h1>Transforming defense<br>capabilities with advanced<br>technology.</h1>
+  <section class="careers-section">
+    <div class="careers-container">
+      <div class="careers-text">
+        <h2>Careers</h2>
+        <h1>Join us in creating<br>the future of<br>defense.</h1>
+        <p>
+          From light bulb to functional prototype in a week.<br>
+          A team rallying around a shared intention to make a<br>
+          positive impact by creating a safer world. That’s life<br>
+          at Tessra AI.
+        </p>
+        <a class="careers-link" href="#">Learn More →</a>
       </div>
-      <div class="mission-right">
-        <p class="mission-text">The battlefield has changed. How we deter &amp; defend needs to change too.</p>
-        <p class="mission-text">Security threats are evolving at machine speed. To keep pace, Tessra AI puts products ahead of process and builds technology to bring India and its allies quantum leaps ahead in capability.</p>
-        <a class="mission-link" href="#">Learn more about our mission →</a>
+      <div class="careers-images">
+        <img src="assets/ima1.png" alt="Careers Image 1" class="top-img">
+        <div class="bottom-imgs">
+          <img src="assets/ima2.png" alt="Careers Image 2">
+          <img src="assets/ima3.png" alt="Careers Image 3">
+        </div>
       </div>
     </div>
-
   </section>
 
-  <!-- Partner Logos Continuous Scroll -->
+  <!-- Partner Logos Moving Horizontally -->
   <section class="partner-logos-section">
     <div class="logo-slider">
-      <img src="assets/logo1.png" alt="Logo 1">
-      <img src="assets/logo2.png" alt="Logo 2">
-      <img src="assets/logo3.png" alt="Logo 3">
-      <img src="assets/logo4.png" alt="Logo 4">
-      <img src="assets/logo5.png" alt="Logo 5">
-      <!-- Duplicate for seamless scroll -->
-      <img src="assets/logo1.png" alt="Logo 1">
-      <img src="assets/logo2.png" alt="Logo 2">
-      <img src="assets/logo3.png" alt="Logo 3">
-      <img src="assets/logo4.png" alt="Logo 4">
-      <img src="assets/logo5.png" alt="Logo 5">
+      <img src="assets/img1.png" alt="Logo 1">
+      <img src="assets/img2.png" alt="Logo 2">
+      <img src="assets/img3.png" alt="Logo 3">
+      <img src="assets/img4.png" alt="Logo 4">
+      <img src="assets/img5.png" alt="Logo 5">
     </div>
   </section>
 
   <!-- Footer -->
   <footer id="contact">
-    <!-- Full footer content -->
-     <footer id="contact">
     <div class="footer-column">
       <h4>ABOUT US</h4>
       <ul>
@@ -231,7 +173,6 @@
       <p>&copy; 2025 Tessra AI. All rights reserved.</p>
       <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
     </div>
-
   </footer>
 
 </main>
@@ -259,20 +200,50 @@
   ScrollTrigger.addEventListener('refresh', () => loco.update());
   ScrollTrigger.refresh();
 
-  // GSAP fade-in on all .reveal elements (but video and logos not affected)
-  gsap.utils.toArray(".reveal").forEach((el, index) => {
-    gsap.from(el, {
+  // Anduril-style delayed fade-in for each section
+  gsap.utils.toArray(".info-section, .roadrunner-section, .three-panel-section, .careers-section, .partner-logos-section").forEach(section => {
+    gsap.from(section, {
       scrollTrigger: {
         scroller: "[data-scroll-container]",
-        trigger: el,
+        trigger: section,
         start: "top 85%",
       },
       autoAlpha: 0,
-      y: 60,
-      duration: 1,
+      y: 100,
+      duration: 1.2,
       ease: "power2.out",
-      delay: index * 0.1
+      delay: 0.2
     });
+  });
+
+  // Stagger panels with Anduril-like delay
+  gsap.utils.toArray(".panel").forEach((panel, index) => {
+    gsap.from(panel, {
+      scrollTrigger: {
+        scroller: "[data-scroll-container]",
+        trigger: panel,
+        start: "top 90%",
+      },
+      autoAlpha: 0,
+      y: 50,
+      delay: index * 0.2,
+      duration: 1,
+      ease: "power3.out"
+    });
+  });
+
+  // Careers Image Stagger
+  gsap.from(".careers-images img", {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: ".careers-images",
+      start: "top 90%",
+    },
+    autoAlpha: 0,
+    y: 50,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power2.out"
   });
 </script>
 
