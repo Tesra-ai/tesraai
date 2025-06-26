@@ -257,18 +257,19 @@ gsap.utils.toArray(".fade-content").forEach(content => {
   });
 
   // Careers Image Stagger
-  gsap.from(".careers-images img", {
-    scrollTrigger: {
-      scroller: "[data-scroll-container]",
-      trigger: ".careers-images",
-      start: "top 90%",
-    },
-    autoAlpha: 0,
-    y: 50,
-    stagger: 0.2,
-    duration: 1,
-    ease: "power2.out"
-  });
+  gsap.from(".careers-section .fade-content", {
+  scrollTrigger: {
+    scroller: "[data-scroll-container]",
+    trigger: ".careers-section",
+    start: "top 85%",
+  },
+  autoAlpha: 0,
+  y: 100,
+  delay: 1,  // Extra section delay
+  duration: 1.2,
+  ease: "power2.out"
+});
+
 </script>
 
 </body>
