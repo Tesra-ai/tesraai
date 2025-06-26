@@ -203,6 +203,12 @@
   ScrollTrigger.addEventListener('refresh', () => loco.update());
   ScrollTrigger.refresh();
 
+  // Fix flickering on first load
+window.addEventListener("load", () => {
+  loco.update();
+  ScrollTrigger.refresh();
+});
+
   // Anduril-style delayed fade-in for each section
 
  // Fade-in for each full-width image separately
