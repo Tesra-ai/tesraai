@@ -21,6 +21,8 @@
 
 <main data-scroll-container>
 
+  <!-- Your Full Original Content Starts -->
+
   <!-- Header -->
   <header class="site-header">
     <div class="logo">TESSRA AI</div>
@@ -31,13 +33,13 @@
     </nav>
   </header>
 
-  <!-- Background Video (No animation effects) -->
+  <!-- Background Video -->
   <video autoplay muted loop id="bg-video" playsinline preload="auto">
     <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/tesra-bg.mp4" type="video/mp4">
   </video>
 
   <!-- Mission Section -->
-  <section class="info-section reveal" id="mission">
+  <section class="info-section" id="mission">
     <h2 class="mission-subtitle">Our Mission</h2>
     <div class="mission-block">
       <div class="mission-left">
@@ -53,12 +55,12 @@
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img class="reveal" src="assets/image1.png" alt="Tessra AI Image">
-    <img class="reveal" src="assets/itsimage.png" alt="Its Image">
+    <img src="assets/image1.png" alt="Tessra AI Image">
+    <img src="assets/itsimage.png" alt="Its Image">
   </div>
 
   <!-- Roadrunner Section -->
-  <section class="roadrunner-section reveal">
+  <section class="roadrunner-section">
     <div class="roadrunner-block">
       <div class="roadrunner-left">
         <video autoplay muted loop playsinline class="roadrunner-video">
@@ -76,7 +78,7 @@
 
   <!-- Three Panel Section -->
   <section class="three-panel-section">
-    <div class="panel reveal">
+    <div class="panel">
       <div class="panel-content">
         <div class="panel-title">DARPA</div>
         <div class="panel-text">Shield AI enabled the X-62 VISTA to autonomously fly and perform tactical maneuvers against human pilots.</div>
@@ -84,7 +86,7 @@
       </div>
       <img src="assets/image1.png" alt="DARPA">
     </div>
-    <div class="panel reveal">
+    <div class="panel">
       <div class="panel-content">
         <div class="panel-title">MQ-20</div>
         <div class="panel-text">Hivemind flies MQ-20 Avenger autonomously at Orange Flag test event.</div>
@@ -92,7 +94,7 @@
       </div>
       <img src="assets/image2.png" alt="MQ-20">
     </div>
-    <div class="panel reveal">
+    <div class="panel">
       <div class="panel-content">
         <div class="panel-title">KRATOS</div>
         <div class="panel-text">Shield AI conducted dual-ship autonomy tests using Kratos’ MQM-178 Firejet drones.</div>
@@ -103,12 +105,17 @@
   </section>
 
   <!-- Careers Section -->
-  <section class="careers-section reveal">
+  <section class="careers-section">
     <div class="careers-container">
       <div class="careers-text">
         <h2>Careers</h2>
         <h1>Join us in creating<br>the future of<br>defense.</h1>
-        <p>From light bulb to functional prototype in a week.<br>A team rallying around a shared intention to make a<br>positive impact by creating a safer world. That’s life<br>at Tessra AI.</p>
+        <p>
+          From light bulb to functional prototype in a week.<br>
+          A team rallying around a shared intention to make a<br>
+          positive impact by creating a safer world. That’s life<br>
+          at Tessra AI.
+        </p>
         <a class="careers-link" href="#">Learn More →</a>
       </div>
       <div class="careers-images">
@@ -121,7 +128,7 @@
     </div>
   </section>
 
-  <!-- Partner Logos (Continuous Scroll, No Fade) -->
+  <!-- Partner Logos Moving Horizontally -->
   <section class="partner-logos-section">
     <div class="logo-slider">
       <img src="assets/img1.png" alt="Logo 1">
@@ -193,19 +200,50 @@
   ScrollTrigger.addEventListener('refresh', () => loco.update());
   ScrollTrigger.refresh();
 
-  gsap.utils.toArray(".reveal").forEach((el, index) => {
-    gsap.from(el, {
+  // Anduril-style delayed fade-in for each section
+  gsap.utils.toArray(".info-section, .roadrunner-section, .three-panel-section, .careers-section, .partner-logos-section").forEach(section => {
+    gsap.from(section, {
       scrollTrigger: {
         scroller: "[data-scroll-container]",
-        trigger: el,
+        trigger: section,
         start: "top 85%",
       },
       autoAlpha: 0,
-      y: 60,
-      duration: 1,
+      y: 100,
+      duration: 1.2,
       ease: "power2.out",
-      delay: index * 0.1
+      delay: 0.2
     });
+  });
+
+  // Stagger panels with Anduril-like delay
+  gsap.utils.toArray(".panel").forEach((panel, index) => {
+    gsap.from(panel, {
+      scrollTrigger: {
+        scroller: "[data-scroll-container]",
+        trigger: panel,
+        start: "top 90%",
+      },
+      autoAlpha: 0,
+      y: 50,
+      delay: index * 0.2,
+      duration: 1,
+      ease: "power3.out"
+    });
+  });
+
+  // Careers Image Stagger
+  gsap.from(".careers-images img", {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: ".careers-images",
+      start: "top 90%",
+    },
+    autoAlpha: 0,
+    y: 50,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power2.out"
   });
 </script>
 
