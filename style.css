@@ -471,9 +471,15 @@ body, html {
 
   html.has-scroll-smooth { overflow: hidden; }
   [data-scroll-container] {
-    opacity: 1;
-    transition: none;
-  }
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+[data-scroll-container] {
+  background: white;
+  z-index: 1;
+  position: relative;
+}
 
 
 
