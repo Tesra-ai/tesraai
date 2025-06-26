@@ -80,8 +80,7 @@
 
   <!-- Three Panel Section -->
   <section class="three-panel-section">
-    <div class="fade-content">
-    <div class="panel">
+   <div class="panel">
       <div class="panel-content">
         <div class="panel-title">DARPA</div>
         <div class="panel-text">Shield AI enabled the X-62 VISTA to autonomously fly and perform tactical maneuvers against human pilots.</div>
@@ -206,7 +205,8 @@
 
   // Anduril-style delayed fade-in for each section
 
- gsap.utils.toArray(".reveal-image").forEach((image, index) => {
+ // Fade-in for each full-width image separately
+gsap.utils.toArray(".reveal-image").forEach(image => {
   gsap.from(image, {
     scrollTrigger: {
       scroller: "[data-scroll-container]",
@@ -217,9 +217,10 @@
     y: 80,
     duration: 1.2,
     ease: "power2.out",
-    delay: index * 0.3  // staggered delay between images
+    delay: 0.2
   });
 });
+
 
 
 // Section Content Fade In (Only inner content, not background)
