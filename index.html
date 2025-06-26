@@ -231,6 +231,7 @@ gsap.utils.toArray(".reveal-image").forEach(image => {
 
 // Section Content Fade In (Only inner content, not background)
 gsap.utils.toArray(".fade-content").forEach(content => {
+  if (!content.closest(".careers-section")) {  // ✅ Skip Careers fade-content
   gsap.from(content, {
     scrollTrigger: {
       scroller: "[data-scroll-container]",
@@ -243,6 +244,7 @@ gsap.utils.toArray(".fade-content").forEach(content => {
     ease: "power2.out",
     delay: 0.2
   });
+  }
 });
   
 
