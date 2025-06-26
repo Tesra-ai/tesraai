@@ -49,22 +49,12 @@ body::-webkit-scrollbar {
 }
 
 /* VIDEO */
-.video-bg-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
+#bg-video {
+  display: block;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
-  overflow: hidden;
-}
-#bg-video {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
-
-
 
 /* MISSION */
 .info-section {
@@ -478,20 +468,14 @@ body, html {
 }
 
 /* Locomotive Scroll smooth */
-
-  html.has-scroll-smooth { overflow: hidden; }
-  [data-scroll-container] {
-  opacity: 1 !important;
-  transition: none !important;
+html.has-scroll-smooth {
+  overflow: hidden;
 }
 
 [data-scroll-container] {
-  background: white;
-  z-index: 2;
-  position: relative;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
-
-
 
 /* Header */
 .site-header {
@@ -628,9 +612,8 @@ body, html {
     max-width: 100%;
   }
 }
-
 #bg-video {
   opacity: 1 !important;
   transition: none !important;
+  animation: none !important;
 }
-
