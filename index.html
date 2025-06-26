@@ -55,8 +55,8 @@
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img src="assets/image1.png" alt="Tessra AI Image">
-    <img src="assets/itsimage.png" alt="Its Image">
+    <img src="assets/image1.png" alt="Tessra AI Image" class="reveal-image">
+    <img src="assets/itsimage.png" alt="Its Image" class="reveal-image">
   </div>
 
   <!-- Roadrunner Section -->
@@ -201,6 +201,24 @@
   ScrollTrigger.refresh();
 
   // Anduril-style delayed fade-in for each section
+
+  // Fade-in for each full-width image separately
+gsap.utils.toArray(".reveal-image").forEach(image => {
+  gsap.from(image, {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: image,
+      start: "top 85%",
+    },
+    autoAlpha: 0,
+    y: 80,
+    duration: 1.2,
+    ease: "power2.out",
+    delay: 0.2
+  });
+});
+
+
   gsap.utils.toArray(".info-section, .roadrunner-section, .three-panel-section, .careers-section, .partner-logos-section").forEach(section => {
     gsap.from(section, {
       scrollTrigger: {

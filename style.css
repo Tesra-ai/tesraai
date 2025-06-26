@@ -612,8 +612,3 @@ html.has-scroll-smooth {
     max-width: 100%;
   }
 }
-#bg-video {
-  opacity: 1 !important;
-  transition: none !important;
-  animation: none !important;
-}
