@@ -549,33 +549,25 @@ html.has-scroll-smooth {
 }
 
 /* Logo Slider (horizontal moving logos) */
-
 .partner-logos-section {
   overflow: hidden;
-  white-space: nowrap;
-  background-color: #000; /* Or whatever your site bg color is */
-  padding: 20px 0;
+  background-color: black;
 }
 
 .logo-slider {
-  display: inline-flex;
-   flex-wrap: nowrap;
-  width: max-content;
+  display: flex;
+  flex-wrap: nowrap;
   animation: scroll-left 20s linear infinite;
 }
 
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); } /* Only scroll 1 full set width */
 }
 
 .partner-logos-section img {
   max-height: 50px;
-  margin-right: 50px; /* Space between logos */
+  margin-right: 50px;
 }
 
 
