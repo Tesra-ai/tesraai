@@ -468,9 +468,13 @@ body, html {
 }
 
 /* Locomotive Scroll smooth */
-html.has-scroll-smooth {
-  overflow: hidden;
-}
+
+  html.has-scroll-smooth { overflow: hidden; }
+  [data-scroll-container] {
+    opacity: 1;
+    transition: none;
+  }
+
 
 [data-scroll-container] {
   opacity: 0;
