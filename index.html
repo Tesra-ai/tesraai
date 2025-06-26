@@ -106,6 +106,24 @@
     </div>
   </section>
 
+  <!-- Partner Logos Moving Horizontally -->
+  <section class="partner-logos-section">
+    <div class="logo-slider">
+      <img src="assets/img1.png" alt="Logo 1">
+      <img src="assets/img2.png" alt="Logo 2">
+      <img src="assets/img3.png" alt="Logo 3">
+      <img src="assets/img4.png" alt="Logo 4">
+      <img src="assets/img5.png" alt="Logo 5">
+
+      <!-- Duplicate set of same 5 logos for seamless loop -->
+    <img src="assets/img1.png" alt="Logo 1 duplicate">
+    <img src="assets/img2.png" alt="Logo 2 duplicate">
+    <img src="assets/img3.png" alt="Logo 3 duplicate">
+    <img src="assets/img4.png" alt="Logo 4 duplicate">
+    <img src="assets/img5.png" alt="Logo 5 duplicate">
+    </div>
+  </section>
+
   <!-- Careers Section -->
   <section class="careers-section">
     <div class="fade-content">
@@ -131,16 +149,6 @@
     </div>
   </section>
 
-  <!-- Partner Logos Moving Horizontally -->
-  <section class="partner-logos-section">
-    <div class="logo-slider">
-      <img src="assets/img1.png" alt="Logo 1">
-      <img src="assets/img2.png" alt="Logo 2">
-      <img src="assets/img3.png" alt="Logo 3">
-      <img src="assets/img4.png" alt="Logo 4">
-      <img src="assets/img5.png" alt="Logo 5">
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer id="contact">
@@ -242,7 +250,7 @@ gsap.utils.toArray(".fade-content").forEach(content => {
     y: 100,
     duration: 3,
     ease: "power2.out",
-    delay: 0.1
+    delay: 0.2
   });
 }
 });
@@ -276,7 +284,7 @@ gsap.utils.toArray(".fade-content").forEach(content => {
     },
     autoAlpha: 1,
     y: 0,
-    delay: 0.1,
+    delay: 0.2,
     duration: 3,
     ease: "power2.out"
   }

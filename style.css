@@ -549,24 +549,33 @@ html.has-scroll-smooth {
 }
 
 /* Logo Slider (horizontal moving logos) */
+
+.partner-logos-section {
+  overflow: hidden;
+  background-color: #000; /* Or whatever your site bg color is */
+  padding: 20px 0;
+}
+
 .logo-slider {
   display: flex;
-  gap: 3rem;
-  padding: 2rem 0;
-  overflow: hidden;
-  white-space: nowrap;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
 }
 
-.logo-slider img {
-  height: 60px;
-  opacity: 0.7;
-  animation: slideLeft 20s linear infinite;
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-@keyframes slideLeft {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+.partner-logos-section img {
+  max-height: 50px;
+  margin-right: 50px; /* Space between logos */
 }
+
 
 /* Footer */
 .site-footer {
