@@ -219,6 +219,20 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
+gsap.fromTo("img[src*='image1.png']",
+  { autoAlpha: 0 },
+  {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: "img[src*='image1.png']",
+      start: "top 50%",
+      toggleActions: "play none none none"
+    },
+    autoAlpha: 1,
+    duration: 1.5,
+    ease: "power2.out"
+  }
+);
 
 
 // Fade-in for itsimage.png only (separate from image1.png)
