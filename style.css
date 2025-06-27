@@ -615,15 +615,3 @@ html.has-scroll-smooth {
   }
 }
 
-.image1-fade {
-  opacity: 0;
-  will-change: opacity;
-}
-.image1-fade-io {
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-}
-
-.image1-fade-io.visible {
-  opacity: 1;
-}
