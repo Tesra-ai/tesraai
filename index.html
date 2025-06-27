@@ -56,7 +56,7 @@
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img src="assets/image1.png" alt="Tessra AI Image" class="reveal-image">
+    <img src="assets/image1.png" alt="Tessra AI Image" class="image-fade">
     <img src="assets/itsimage.png" alt="Its Image" class="reveal-image">
   </div>
 
@@ -215,6 +215,22 @@ window.addEventListener("load", () => {
   loco.update();
   ScrollTrigger.refresh();
 });
+
+gsap.fromTo("img[src*='image.png']", 
+  { autoAlpha: 0 }, 
+  { 
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: "img[src*='image.png']",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    autoAlpha: 1,
+    duration: 2,
+    ease: "power2.out"
+  }
+);
+
 
   // Anduril-style delayed fade-in for each section
 
