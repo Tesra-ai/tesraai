@@ -218,6 +218,8 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
 gsap.fromTo("img[src*='image1.png']", 
   { autoAlpha: 0 }, 
   { 
@@ -234,6 +236,7 @@ gsap.fromTo("img[src*='image1.png']",
     }
   }
 );
+
 
 
 // Fade-in for itsimage.png only (separate from image1.png)

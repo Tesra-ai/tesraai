@@ -615,3 +615,6 @@ html.has-scroll-smooth {
   }
 }
 
+img[src*='image1.png'] {
+  will-change: opacity;
+}
