@@ -189,18 +189,24 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const img = document.querySelector("img[src*='image1.png']");
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        img.classList.add('image-fade-visible');
-        observer.unobserve(img);
-      }
-    });
-  }, { threshold: 0.75 });  // 75% visible
 
-  observer.observe(img);
+  const fadeInImage = () => {
+    img.classList.add('image-fade-visible');
+  };
+
+  const loco = window.locoScroll;  // Assuming you already created LocomotiveScroll instance as `loco`
+
+  loco.on('scroll', (args) => {
+    const imageRect = img.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (imageRect.top < windowHeight * 0.75) {   // Trigger when 75% down
+      fadeInImage();
+    }
+  });
 });
 </script>
+
 <script>
  
 
