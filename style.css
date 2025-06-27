@@ -558,21 +558,17 @@ html.has-scroll-smooth {
   display: flex;
   flex-wrap: nowrap;
   animation: scroll-left 20s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 @keyframes scroll-left {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-25%); } /* Only scroll 1 full set width */
+  100% { transform: translateX(-50%); }  /* ✅ Scrolls the full width of one full set */
 }
 
 .partner-logos-section img {
   max-height: 50px;
   margin-right: 50px;
 }
-
 
 /* Footer */
 .site-footer {
