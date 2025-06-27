@@ -635,3 +635,13 @@ html.has-scroll-smooth {
   display: block;       /* ✅ Centering */
   margin: 0 auto;       /* ✅ Centering */
 }
+.image1-img {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 2s ease, opacity 2s ease;  /* Slow transition, 2 seconds */
+}
+
+.image1-img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
