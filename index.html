@@ -56,7 +56,7 @@
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img src="assets/image1.png" alt="Tessra AI Image" class="image1-static-fade">
+    <img src="assets/image1.png" alt="Tessra AI Image" class="image-fade">
     <img src="assets/itsimage.png" alt="Its Image" class="reveal-image">
   </div>
 
@@ -218,14 +218,12 @@ window.addEventListener("load", () => {
 
 
 
-
-
-gsap.fromTo(".image1-static-fade", 
+gsap.fromTo("img[src*='image1.png']", 
   { autoAlpha: 0 }, 
   { 
     scrollTrigger: {
       scroller: "[data-scroll-container]",
-      trigger: ".image1-static-fade",
+      trigger: "img[src*='image1.png']",
       start: "top 85%",
       toggleActions: "play none none none"
     },
@@ -239,7 +237,7 @@ gsap.fromTo(".image1-static-fade",
   // Anduril-style delayed fade-in for each section
 
  // Fade-in for each full-width image separately
-gsap.utils.toArray(".reveal-image :not(.image1-static-fade)").forEach(image => {
+gsap.utils.toArray(".reveal-image").forEach(image => {
   gsap.fromTo(image, 
     { autoAlpha: 0 },           // Start: fully transparent
     { 
@@ -261,27 +259,21 @@ gsap.utils.toArray(".reveal-image :not(.image1-static-fade)").forEach(image => {
 
 // Section Content Fade In (Only inner content, not background)
 gsap.utils.toArray(".fade-content").forEach(content => {
-  if (
-    !content.closest(".careers-section") && 
-    !content.closest(".info-section") && 
-    !content.querySelector(".image1-static-fade")   // ✅ Skip container with image1
-  ) {
-    gsap.from(content, {
-      scrollTrigger: {
-        scroller: "[data-scroll-container]",
-        trigger: content,
-        start: "top 85%",
-      },
-      autoAlpha: 0,
-      y: 100,
-      duration: 3,
-      ease: "power2.out",
-      delay: 0.2
-    });
-  }
+  if (!content.closest(".careers-section")) {  // ✅ Skip Careers fade-content
+  gsap.from(content, {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: content,
+      start: "top 85%",
+    },
+    autoAlpha: 0,
+    y: 100,
+    duration: 3,
+    ease: "power2.out",
+    delay: 0.2
+  });
+}
 });
-
-
 
 
 
@@ -302,7 +294,7 @@ gsap.utils.toArray(".fade-content").forEach(content => {
   });
 
   // Careers Image Stagger
-  gsap.fromTo("img.image-fade:not(.image1-static-fade) .careers-section .fade-content", 
+  gsap.fromTo(".careers-section .fade-content", 
   { autoAlpha: 0, y: 100 },
   {
     scrollTrigger: {
