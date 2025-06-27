@@ -220,18 +220,20 @@ window.addEventListener("load", () => {
 
  // Fade-in for each full-width image separately
 gsap.utils.toArray(".reveal-image").forEach(image => {
-  gsap.from(image, {
-    scrollTrigger: {
-      scroller: "[data-scroll-container]",
-      trigger: image,
-      start: "top 85%",
-    },
-    autoAlpha: 0,
-    y: 0,
-    duration: 1.5,
-    ease: "power2.out",
-    delay: 0.2
-  });
+  gsap.fromTo(image, 
+    { autoAlpha: 0 }, 
+    {
+      scrollTrigger: {
+        scroller: "[data-scroll-container]",
+        trigger: image,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      },
+      autoAlpha: 1,
+      duration: 2,
+      ease: "power1.out"
+    }
+  );
 });
 
 
