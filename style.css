@@ -614,3 +614,8 @@ html.has-scroll-smooth {
     max-width: 100%;
   }
 }
+
+img.image-fade {
+  transform: none !important;
+  opacity: 0; /* Optional: Start fully hidden by default */
+}

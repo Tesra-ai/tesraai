@@ -216,6 +216,22 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
+gsap.fromTo("img.image-fade", 
+  { autoAlpha: 0 }, 
+  { 
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: "img.image-fade",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    autoAlpha: 1,
+    duration: 2,
+    ease: "power2.out"
+  }
+);
+
+
 gsap.fromTo("img[src*='image1.png']", 
   { autoAlpha: 0 }, 
   { 
