@@ -16,6 +16,9 @@
     html.has-scroll-smooth { overflow: hidden; }
     [data-scroll-container] { opacity: 0; }
   </style>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 </head>
 <body>
 
@@ -56,7 +59,7 @@
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img src="assets/image1.png" alt="Tessra AI Image">
+    <img src="assets/image1.png" alt="Tessra AI Image" data-aos="fade" data-aos-duration="1500">
     <img src="assets/itsimage.png" alt="Its Image" class="reveal-image">
   </div>
 
@@ -186,26 +189,7 @@
   </footer>
 
 </main>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const img = document.querySelector("img[src*='image1.png']");
 
-  const fadeInImage = () => {
-    img.classList.add('image-fade-visible');
-  };
-
-  const loco = window.locoScroll;  // Assuming you already created LocomotiveScroll instance as `loco`
-
-  loco.on('scroll', (args) => {
-    const imageRect = img.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    if (imageRect.top < windowHeight * 0.75) {   // Trigger when 75% down
-      fadeInImage();
-    }
-  });
-});
-</script>
 
 <script>
  
@@ -310,6 +294,14 @@ gsap.utils.toArray(".fade-content").forEach(content => {
   }
 );
 
+</script>
+<script>
+  AOS.init({
+    once: true,  // ✅ Only animate once
+    duration: 1000  // ✅ Animation duration (you can tweak)
+  });
+
+  loco.on('scroll', AOS.refresh);  // ✅ Refresh AOS on Locomotive scroll
 </script>
 
 </body>

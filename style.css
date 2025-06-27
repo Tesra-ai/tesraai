@@ -614,11 +614,4 @@ html.has-scroll-smooth {
     max-width: 100%;
   }
 }
-img[src*='image1.png'] {
-  opacity: 0;
-  transition: opacity 1.5s ease-out;
-}
-img[src*='image1.png'].image-fade-visible {
-  opacity: 1;
-}
 
