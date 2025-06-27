@@ -614,9 +614,15 @@ html.has-scroll-smooth {
     max-width: 100%;
   }
 }
-/* Fix for image1.png fade jump background */
-img[src*="image1.png"] {
-  background-color: #e8e0d9;   /* Matches site beige */
+.image1-wrapper {
+  background-color: #e8e0d9;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.image1-wrapper img {
   display: block;
   width: 100%;
   height: auto;
