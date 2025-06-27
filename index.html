@@ -188,22 +188,7 @@
 </main>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  const image = document.querySelector(".image1-fade-io");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        image.classList.add("visible");
-        observer.unobserve(image);  // Optional: Run only once
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  if (image) observer.observe(image);
-});
+ 
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -233,6 +218,22 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const image = document.querySelector(".image1-fade-io");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        image.classList.add("visible");
+        observer.unobserve(image);  // Optional: Run only once
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  if (image) observer.observe(image);
+});
 
 
 // Fade-in for itsimage.png only (separate from image1.png)

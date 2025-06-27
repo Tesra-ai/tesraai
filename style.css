@@ -621,7 +621,7 @@ html.has-scroll-smooth {
 }
 .image1-fade-io {
   opacity: 0;
-  transition: opacity 1.5s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
 .image1-fade-io.visible {
