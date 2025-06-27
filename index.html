@@ -233,6 +233,20 @@ gsap.fromTo("img[src*='itsimage.png']",
     ease: "power2.out"
   }
 );
+gsap.fromTo("img.image1-fade", 
+  { autoAlpha: 0 }, 
+  { 
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: "img.image1-fade",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    autoAlpha: 1,
+    duration: 2,
+    ease: "power2.out"
+  }
+);
 
 // Section Content Fade In (Only inner content, not background)
 gsap.utils.toArray(".fade-content").forEach(content => {
