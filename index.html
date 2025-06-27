@@ -56,7 +56,7 @@
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img src="assets/image1.png" alt="Tessra AI Image" class="image1-fade no-translate">
+    <img src="assets/image1.png" alt="Tessra AI Image" class="image1-fade-io">
     <img src="assets/itsimage.png" alt="Its Image" class="reveal-image">
   </div>
 
@@ -188,6 +188,23 @@
 </main>
 
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const image = document.querySelector(".image1-fade-io");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        image.classList.add("visible");
+        observer.unobserve(image);  // Optional: Run only once
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  if (image) observer.observe(image);
+});
+
   gsap.registerPlugin(ScrollTrigger);
 
   const loco = new LocomotiveScroll({
@@ -233,46 +250,24 @@ gsap.fromTo("img[src*='itsimage.png']",
     ease: "power2.out"
   }
 );
-gsap.fromTo("img.image1-fade", 
-  { autoAlpha: 0 }, 
-  { 
-    scrollTrigger: {
-      scroller: "[data-scroll-container]",
-      trigger: "img.image1-fade",
-      start: "top 85%",
-      toggleActions: "play none none none"
-    },
-    autoAlpha: 1,
-    duration: 2,
-    ease: "power2.out"
-  }
-);
 
 // Section Content Fade In (Only inner content, not background)
 gsap.utils.toArray(".fade-content").forEach(content => {
-  // Skip Careers section and Mission section
-  if (
-    !content.closest(".careers-section") && 
-    !content.closest(".info-section")
-  ) {
-    // ✅ Also skip any elements that contain .no-translate child (like your image1.png)
-    if (!content.querySelector(".no-translate")) {
-      gsap.from(content, {
-        scrollTrigger: {
-          scroller: "[data-scroll-container]",
-          trigger: content,
-          start: "top 85%",
-        },
-        autoAlpha: 0,
-        y: 100,
-        duration: 3,
-        ease: "power2.out",
-        delay: 0.2
-      });
-    }
-  }
+  if (!content.closest(".careers-section")) {  // ✅ Skip Careers fade-content
+  gsap.from(content, {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: content,
+      start: "top 85%",
+    },
+    autoAlpha: 0,
+    y: 100,
+    duration: 3,
+    ease: "power2.out",
+    delay: 0.2
+  });
+}
 });
-
 
 
 

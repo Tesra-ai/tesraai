@@ -619,3 +619,11 @@ html.has-scroll-smooth {
   opacity: 0;
   will-change: opacity;
 }
+.image1-fade-io {
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+}
+
+.image1-fade-io.visible {
+  opacity: 1;
+}
