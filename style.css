@@ -424,24 +424,37 @@ footer {
   }
 }
 .partner-logos-section {
+  margin: 4rem 0; /* spacing from careers section */
+  padding: 2rem 0;
+  background-color: #e8e0d9;
   overflow: hidden;
-  background-color: black;
 }
 
 .logo-slider {
   display: flex;
-  flex-wrap: nowrap;
-  animation: scroll-left 20s linear infinite;
+  gap: 3rem;
+  animation: scroll-left 15s linear infinite;
+  align-items: center;
+}
+
+.logo-slider img {
+  height: 80px; /* Adjust logo size here */
+  object-fit: contain;
 }
 
 @keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Scroll full width of first logo set */
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.partner-logos-section img {
-  max-height: 50px;
-  margin-right: 50px;
+@media (max-width: 600px) {
+  .logo-slider img {
+    height: 50px;
+  }
 }
 
 /* General Reset */
