@@ -216,12 +216,12 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
-gsap.fromTo("img[src*='image.png']", 
+gsap.fromTo("img[src*='image1.png']", 
   { autoAlpha: 0 }, 
   { 
     scrollTrigger: {
       scroller: "[data-scroll-container]",
-      trigger: "img[src*='image.png']",
+      trigger: "img[src*='image1.png']",
       start: "top 85%",
       toggleActions: "play none none none"
     },
