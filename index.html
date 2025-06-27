@@ -216,8 +216,6 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
-
-
 gsap.fromTo("img[src*='image1.png']", 
   { opacity: 0 }, 
   { 
@@ -233,29 +231,21 @@ gsap.fromTo("img[src*='image1.png']",
   }
 );
 
-
-  // Anduril-style delayed fade-in for each section
-
- // Fade-in for each full-width image separately
-gsap.utils.toArray(".reveal-image").forEach(image => {
-  gsap.fromTo(image, 
-    { autoAlpha: 0 },           // Start: fully transparent
-    { 
-      scrollTrigger: {
-        scroller: "[data-scroll-container]",
-        trigger: image,
-        start: "top 85%",
-        toggleActions: "play none none none"
-      },
-      autoAlpha: 1,              // End: fully visible
-      duration: 2,
-      ease: "power2.out"
-    }
-  );
-});
-
-
-
+// Fade-in for itsimage.png only (separate from image1.png)
+gsap.fromTo("img[src*='itsimage.png']", 
+  { opacity: 0 },           
+  { 
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: "img[src*='itsimage.png']",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    opacity: 1,              
+    duration: 2,
+    ease: "power2.out"
+  }
+);
 
 // Section Content Fade In (Only inner content, not background)
 gsap.utils.toArray(".fade-content").forEach(content => {
