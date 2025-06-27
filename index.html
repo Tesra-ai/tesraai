@@ -186,7 +186,21 @@
   </footer>
 
 </main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const img = document.querySelector("img[src*='image1.png']");
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        img.classList.add('image-fade-visible');
+        observer.unobserve(img);
+      }
+    });
+  }, { threshold: 0.75 });  // 75% visible
 
+  observer.observe(img);
+});
+</script>
 <script>
  
 
@@ -217,25 +231,6 @@ window.addEventListener("load", () => {
   loco.update();
   ScrollTrigger.refresh();
 });
-
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.fromTo("img[src*='image1.png']", 
-  { autoAlpha: 0 }, 
-  { 
-    autoAlpha: 1,
-    duration: 2,
-    ease: "power2.out",
-    scrollTrigger: {
-      scroller: "[data-scroll-container]",
-      trigger: "img[src*='image1.png']",
-      start: "top 85%",
-      toggleActions: "play none none none",
-      once: true,                         // ✅ Important
-      id: "image1-fade"                    // ✅ Unique ID for tracking
-    }
-  }
-);
 
 
 
