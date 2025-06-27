@@ -56,7 +56,7 @@
 
   <!-- Full Width Images -->
   <div class="full-image-section">
-    <img src="assets/image1.png" alt="Tessra AI Image" class="image-fade">
+    <img src="assets/image1.png" alt="Tessra AI Image">
     <img src="assets/itsimage.png" alt="Its Image" class="reveal-image">
   </div>
 
@@ -216,20 +216,7 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
-gsap.fromTo("img[src*='image1.png']", 
-  { opacity: 0 }, 
-  { 
-    scrollTrigger: {
-      scroller: "[data-scroll-container]",
-      trigger: "img[src*='image1.png']",
-      start: "top 85%",
-      toggleActions: "play none none none"
-    },
-    opacity: 1,
-    duration: 2,
-    ease: "power2.out"
-  }
-);
+
 
 // Fade-in for itsimage.png only (separate from image1.png)
 gsap.fromTo("img[src*='itsimage.png']", 
