@@ -239,7 +239,7 @@ gsap.fromTo(".image1-static-fade",
   // Anduril-style delayed fade-in for each section
 
  // Fade-in for each full-width image separately
-gsap.utils.toArray(".reveal-image").forEach(image => {
+gsap.utils.toArray(".reveal-image :not(.image1-static-fade)").forEach(image => {
   gsap.fromTo(image, 
     { autoAlpha: 0 },           // Start: fully transparent
     { 
@@ -302,7 +302,7 @@ gsap.utils.toArray(".fade-content").forEach(content => {
   });
 
   // Careers Image Stagger
-  gsap.fromTo(".careers-section .fade-content", 
+  gsap.fromTo("img.image-fade:not(.image1-static-fade) .careers-section .fade-content", 
   { autoAlpha: 0, y: 100 },
   {
     scrollTrigger: {
