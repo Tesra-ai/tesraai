@@ -263,8 +263,8 @@ footer {
   justify-content: space-between;
   align-items: stretch;
   margin: 4rem 1rem;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
+  border-top: 1px solid #e8e0d9;
+  border-bottom: 1px solid #e8e0d9;
 }
 
 .panel {
@@ -551,7 +551,7 @@ html.has-scroll-smooth {
 /* Logo Slider (horizontal moving logos) */
 .partner-logos-section {
   overflow: hidden;
-  background-color: black;
+  background-color: #e8e0d9;
 }
 
 .logo-slider {

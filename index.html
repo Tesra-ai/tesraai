@@ -220,21 +220,22 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
-gsap.fromTo("img[src*='ima1.png']",
+gsap.fromTo("img[src*='image1.png']",
   { autoAlpha: 0, y: 30 },
   {
     scrollTrigger: {
       scroller: "[data-scroll-container]",
-      trigger: "img[src*='ima1.png']",
+      trigger: "img[src*='image1.png']",
       start: "top 85%",
       toggleActions: "play none none none"
     },
     autoAlpha: 1,
     y: 0,
-    duration: 2,  // Make it slower (increase this as needed)
+    duration: 2,
     ease: "power2.out"
   }
 );
+
 
 
 // Fade-in for itsimage.png only (separate from image1.png)
