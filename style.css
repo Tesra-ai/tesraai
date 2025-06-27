@@ -627,3 +627,10 @@ html.has-scroll-smooth {
   width: 100%;
   height: auto;
 }
+.top-img {
+  width: 100%;
+  max-width: 500px;    /* ✅ Prevent oversized stretch */
+  border-radius: 6px;
+  display: block;       /* ✅ Centering */
+  margin: 0 auto;       /* ✅ Centering */
+}
