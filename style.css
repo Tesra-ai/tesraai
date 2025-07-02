@@ -74,7 +74,7 @@ body::-webkit-scrollbar {
 /* HERO TEXT BLOCK (like Figure.ai) */
 .hero-text-section {
   position: absolute;
-  bottom: 3%;       /* ⬅ Pushes text lower */
+  bottom: 4.5%;       /* ⬅ Pushes text lower */
   left: 1%;       /* ⬅ Pushes more to the left edge */
   z-index: 10;
   max-width: 420px;
