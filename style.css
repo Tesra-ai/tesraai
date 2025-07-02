@@ -49,18 +49,18 @@ body::-webkit-scrollbar {
 
 /* VIDEO */
 #bg-video {
- #bg-video {
   display: block;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: -1;
 }
 
-}
+
+
 /* HERO TEXT BLOCK (like Figure.ai) */
 .hero-text-section {
   position: absolute;
