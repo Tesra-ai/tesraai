@@ -75,9 +75,9 @@ body::-webkit-scrollbar {
 .hero-text-section {
   position: absolute;
   bottom: 8%;       /* ⬅ Pushes text lower */
-  left: 1%;       /* ⬅ Pushes more to the left edge */
+  left: 3%;       /* ⬅ Pushes more to the left edge */
   z-index: 10;
-  max-width: 430px;
+  max-width: 480px;
   color: #fff;
   padding: 0 0.5rem;
   font-size: 1rem;
