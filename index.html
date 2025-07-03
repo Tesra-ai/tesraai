@@ -250,6 +250,24 @@ document.querySelectorAll('[data-scroll-to]').forEach(btn => {
   });
 });
 
+let lastScrollY = 0;
+const nav = document.querySelector('.top-left-nav');
+
+loco.on('scroll', ({ scroll }) => {
+  const currentScroll = scroll.y;
+
+  if (currentScroll > lastScrollY + 10) {
+    // Scrolling down — hide
+    nav.classList.add('hidden');
+  } else if (currentScroll < lastScrollY - 10) {
+    // Scrolling up — show
+    nav.classList.remove('hidden');
+  }
+
+  lastScrollY = currentScroll;
+});
+
+
 
 gsap.fromTo("img[src*='image1.png']",
   { autoAlpha: 0, y: 30 },
