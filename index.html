@@ -40,14 +40,18 @@
       <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/tesra-bg.mp4" type="video/mp4">
     </video>
 
-    <div class="hero-text-section">
-      <h1 class="hero-main-text">
-        Figure is the first-of-its-kind AI<br>
-        robotics company bringing a<br>
-        general purpose humanoid to&nbsp;life.
-      </h1>
-       </div>
+    <div class="hero-text-section classy-hero-text">
+  <div class="glass-bg">
+    <h1 class="hero-main-text">
+      Figure is the first-of-its-kind AI<br>
+      robotics company bringing a<br>
+      general purpose humanoid to&nbsp;life.
+    </h1>
+    <p class="hero-subtext">
+      Intelligent machines. Real-world impact.
+    </p>
   </div>
+</div>
 </section>
 
 
@@ -232,6 +236,13 @@
 window.addEventListener("load", () => {
   loco.update();
   ScrollTrigger.refresh();
+  gsap.from(".glass-bg", {
+  y: 40,
+  autoAlpha: 0,
+  duration: 1.8,
+  ease: "power3.out"
+});
+
 });
 
 // Smooth scroll when nav buttons are clicked

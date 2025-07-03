@@ -126,6 +126,22 @@ body::-webkit-scrollbar {
   }
 }
 
+/* === Enhanced Hero Glass Styling === */
+.classy-hero-text .glass-bg {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.classy-hero-text .hero-subtext {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  color: #ddd;
+}
+
 
 /* MISSION */
 .info-section {
