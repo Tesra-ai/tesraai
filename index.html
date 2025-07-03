@@ -24,18 +24,20 @@
   <!-- Your Full Original Content Starts -->
 
  <!-- Floating Top Left Buttons -->
+<!-- Floating Top Left Buttons with scroll targets -->
 <div class="top-left-nav">
-  <button>About Us</button>
-  <button>AI</button>
-  <button>Master Plan</button>
-  <button>Culture</button>
-  <button>News</button>
-  <button>Careers</button>
+  <button data-scroll-to="#home">About Us</button>
+  <button data-scroll-to="#mission">AI</button>
+  <button data-scroll-to="#roadrunner">Master Plan</button>
+  <button data-scroll-to="#careers">Culture</button>
+  <button data-scroll-to="#contact">News</button>
+  <button data-scroll-to="#careers">Careers</button>
 </div>
+
 
   <!-- Background Video -->
  <!-- Hero Video + Overlayed Text -->
-<section class="hero-wrapper">
+<section class="hero-wrapper" id="home">
   <div class="hero-video-container">
     <video autoplay muted loop id="bg-video" playsinline preload="auto">
       <source src="https://pub-998a336ce4c3448fa1422d94bbb21f4d.r2.dev/tesra-bg.mp4" type="video/mp4">
@@ -233,6 +235,20 @@ window.addEventListener("load", () => {
   loco.update();
   ScrollTrigger.refresh();
 });
+
+// Smooth scroll when nav buttons are clicked
+document.querySelectorAll('[data-scroll-to]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const target = btn.getAttribute('data-scroll-to');
+    loco.scrollTo(target, {
+      offset: 0,
+      duration: 1200,
+      easing: [0.25, 0.00, 0.35, 1.00]
+    });
+  });
+});
+
 
 gsap.fromTo("img[src*='image1.png']",
   { autoAlpha: 0, y: 30 },
