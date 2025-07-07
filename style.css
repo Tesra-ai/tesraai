@@ -482,9 +482,8 @@ footer {
 }
 
 .top-img {
-  width: 100%;              /* Take full available space */
-  margin-left: 0.5rem;      /* Shift right to align with bottom */
-  margin-bottom: 1rem;      /* Add spacing between top and bottom images */
+  width: 48%;               /* Keep the original size */
+  margin-left: 0.5rem;      /* Push slightly to the right */
   height: auto;
   border-radius: 8px;
   object-fit: cover;
