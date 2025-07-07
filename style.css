@@ -497,11 +497,12 @@ footer {
 .bottom-imgs {
   display: flex;
   gap: 1rem;
-   flex-wrap: 100; /* ✅ Allow wrapping on narrow screens */
+   flex-wrap: nowrap; /* ✅ Allow wrapping on narrow screens */
+    justify-content: space-between;
 }
 
 .bottom-imgs img {
- width: calc(50% - 0.5rem);  /* 48–49% to compensate for the 1rem gap */
+ width: calc(33.33% - 0.67rem);  /* Three images, with gap compensation */
   border-radius: 6px;
   object-fit: cover;
    max-width: 100%;            /* Responsive safety */
@@ -527,6 +528,9 @@ footer {
     width: 100%;
   }
 }
+
+
+
 .partner-logos-section {
   margin: 4rem 0; /* spacing from careers section */
   padding: 2rem 0;
