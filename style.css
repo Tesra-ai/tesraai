@@ -482,13 +482,15 @@ footer {
 }
 
 .top-img {
-  width: 48% !important;
+  width: 100%;              /* Take full available space */
+  margin-left: 0.5rem;      /* Shift right to align with bottom */
+  margin-bottom: 1rem;      /* Add spacing between top and bottom images */
   height: auto;
   border-radius: 8px;
   object-fit: cover;
-  max-width: 100%;          /* Ensures it doesn't exceed its container */
-  margin-left: -1rem;      /* ✅ Nudges it slightly more to the left */
+  max-width: 100%;
 }
+
 
 .bottom-imgs {
   display: flex;
