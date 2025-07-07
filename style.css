@@ -481,14 +481,18 @@ footer {
   align-items: flex-start;  /* ✅ Align images to the left */
 }
 
+
 .top-img {
-  width: 48%;               /* Keep the original size */
-  margin-left: 0.5rem;      /* Push slightly to the right */
-  height: auto;
+  width: 48%;                  /* Keeps its visual proportion */
+  height: 230px;               /* Reduce vertical height (adjustable) */
+  margin: 0;                   /* Removes any external spacing */
+  padding: 0;                  /* Remove internal spacing (if any) */
   border-radius: 8px;
   object-fit: cover;
-  max-width: 100%;
+  display: block;
 }
+
+
 
 
 .bottom-imgs {
