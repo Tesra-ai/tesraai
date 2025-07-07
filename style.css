@@ -483,7 +483,7 @@ footer {
 
 
 .top-img {
-  width: 48% !important;
+  width: calc(50% - 0.5rem);  /* ✅ Fix overflow */
   height: auto;
   border-radius: 8px;
   object-fit: cover;
