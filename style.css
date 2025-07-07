@@ -474,24 +474,23 @@ footer {
 
 .careers-images {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: column-reverse;
+  gap: 1.5rem;
   flex: 1;
   max-width: 100%;
-  align-items: flex-start;  /* ✅ Align images to the left */
+  align-items: center;  /* ✅ Align images to the left */
 }
 
 
 .top-img {
-  width: 48%;                  /* Keeps its visual proportion */
-  height: 230px;               /* Reduce vertical height (adjustable) */
-  margin: 0;                   /* Removes any external spacing */
-  padding: 0;                  /* Remove internal spacing (if any) */
+  width: 48% !important;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
-  display: block;
+  max-width: 100%;          /* Ensures it doesn't exceed its container */
+  margin-left: 0rem;      /* ✅ Nudges it slightly more to the left */
+  margin-top: 1rem;         /* ✅ Move image down */
 }
-
 
 
 
