@@ -477,27 +477,27 @@ footer {
   flex-direction: column-reverse;
   gap: 1.5rem;
   flex: 1;
-  max-width: 100%;
-  align-items: center;  /* ✅ Align images to the left */
+  max-width: 650px;
+  width: 100%;  /* ✅ Align images to the left */
 }
 
 
 .top-img {
-  width: 48% !important;
-  height: auto;
-  border-radius: 8px;
+  display: block;
+  height: auto;                  /* Keep original height */
+  width: 100%;                   /* Use full container width */
   object-fit: cover;
-  max-width: 100%;          /* Ensures it doesn't exceed its container */
-  margin-left: 0rem;      /* ✅ Nudges it slightly more to the left */
-  margin-top: 1rem;         /* ✅ Move image down */
+  border-radius: 8px;
+  margin-left: 0;
 }
+
 
 
 
 .bottom-imgs {
   display: flex;
   gap: 1rem;
-   flex-wrap: wrap; /* ✅ Allow wrapping on narrow screens */
+   flex-wrap: 100; /* ✅ Allow wrapping on narrow screens */
 }
 
 .bottom-imgs img {
@@ -506,6 +506,13 @@ footer {
   object-fit: cover;
    max-width: 100%;            /* Responsive safety */
 }
+
+.stretched-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
 
 @media (max-width: 900px) {
   .careers-container {
