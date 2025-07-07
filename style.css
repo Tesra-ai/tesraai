@@ -483,22 +483,21 @@ footer {
 
 
 .top-img {
-  width: 100;
-  height: auto;                  /* Keep original height */
-  width: 100%;                   /* Use full container width */
-  object-fit: cover;
+  width: 48% !important;
+  height: auto;
   border-radius: 8px;
-  margin-left: 0;
+  object-fit: cover;
+  max-width: none;          /* Ensures it doesn't exceed its container */
+  margin-left: 0rem;      /* ✅ Nudges it slightly more to the left */
+  margin-top: 1rem;         /* ✅ Move image down */
 }
-
 
 
 
 .bottom-imgs {
   display: flex;
   gap: 1rem;
-   flex-wrap: nowrap; /* ✅ Allow wrapping on narrow screens */
-   justify-content: space-between;
+   flex-wrap: 100; /* ✅ Allow wrapping on narrow screens */
 }
 
 .bottom-imgs img {
