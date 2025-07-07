@@ -474,7 +474,7 @@ footer {
 
 .careers-images {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 1.5rem;
   flex: 1;
   max-width: 650px;
@@ -487,7 +487,7 @@ footer {
   height: auto;
   border-radius: 8px;
   object-fit: cover;
-  max-width: none;          /* Ensures it doesn't exceed its container */
+  max-width: 100;          /* Ensures it doesn't exceed its container */
   margin-left: 0rem;      /* ✅ Nudges it slightly more to the left */
   margin-top: 1rem;         /* ✅ Move image down */
 }
