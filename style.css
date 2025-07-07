@@ -483,7 +483,7 @@ footer {
 
 
 .top-img {
-  display: block;
+  width: 100;
   height: auto;                  /* Keep original height */
   width: 100%;                   /* Use full container width */
   object-fit: cover;
@@ -497,7 +497,8 @@ footer {
 .bottom-imgs {
   display: flex;
   gap: 1rem;
-   flex-wrap: 100; /* ✅ Allow wrapping on narrow screens */
+   flex-wrap: nowrap; /* ✅ Allow wrapping on narrow screens */
+   justify-content: space-between;
 }
 
 .bottom-imgs img {
