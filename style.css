@@ -483,9 +483,9 @@ footer {
 
 
 .top-img {
-  width: calc(50% - 0.5rem); /* ✅ Make it match bottom images */
+  width: 46% !important;  /* ✅ Fix overflow */
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   object-fit: cover;
   max-width: 100%;          /* Ensures it doesn't exceed its container */
   margin-left: 0rem;      /* ✅ Nudges it slightly more to the left */
@@ -501,7 +501,7 @@ footer {
 }
 
 .bottom-imgs img {
- width: calc(50% - 0.5rem);  /* 48–49% to compensate for the 1rem gap */
+width: 46% !important;  /* ✅ Fix overflow */
   border-radius: 6px;
   object-fit: cover;
    max-width: 100%;            /* Responsive safety */
