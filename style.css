@@ -483,13 +483,13 @@ footer {
 
 
 .top-img {
-  width: 46% !important;  /* ✅ Fix overflow */
+   width: calc(50% - 0.5rem);  /* ✅ Matches .bottom-imgs img */
   height: auto;
   border-radius: 6px;
   object-fit: cover;
   max-width: 100;          /* Ensures it doesn't exceed its container */
   margin-left: 0rem;      /* ✅ Nudges it slightly more to the left */
-  margin-top: 1rem;         /* ✅ Move image down */
+  margin-top: 0rem;         /* ✅ Move image down */
 }
 
 
