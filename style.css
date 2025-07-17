@@ -495,14 +495,14 @@ footer {
 
 
 .bottom-imgs {
+  width: 46% !important;  /* ✅ Fix overflow */
   display: flex;
   gap: 1rem;
    flex-wrap: 100; /* ✅ Allow wrapping on narrow screens */
 }
 
 .bottom-imgs img {
- width: calc(50% - 0.5rem);  /* 48–49% to compensate for the 1rem gap */
-  border-radius: 6px;
+ border-radius: 6px;
   object-fit: cover;
    max-width: 100%;            /* Responsive safety */
 }
