@@ -655,25 +655,25 @@ html.has-scroll-smooth {
 
 /* Logo Slider (horizontal moving logos) */
 .partner-logos-section {
-  overflow: hidden;
   background-color: #e8e0d9;
+  overflow: hidden;
   padding: 20px 0;
 }
 
 .slider-track {
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
 }
 
 .logo-slider {
   display: flex;
-  width: fit-content;
-  animation: scroll-left 20s linear infinite;
 }
 
 .logo-slider img {
   max-height: 50px;
   margin-right: 50px;
+  flex-shrink: 0; /* Prevents logos from shrinking */
 }
 
 @keyframes scroll-left {
@@ -684,6 +684,7 @@ html.has-scroll-smooth {
     transform: translateX(-50%);
   }
 }
+
 
 
 
