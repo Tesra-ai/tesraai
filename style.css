@@ -657,31 +657,31 @@ html.has-scroll-smooth {
 .partner-logos-section {
   background-color: #e8e0d9;
   overflow: hidden;
-  padding: 20px 0;
+  padding: 30px 0;
+}
+
+.logo-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .logo-track {
   display: flex;
-  width: fit-content;
-  animation: scroll-left 20s linear infinite;
-  will-change: transform;
+  width: max-content;
+  animation: scroll 25s linear infinite;
 }
 
-.logo-set {
-  display: flex;
-}
-
-.logo-set img {
+.logo-track img {
   height: 50px;
-  width: 150px;
   margin-right: 50px;
-  flex-shrink: 0;
   object-fit: contain;
+  flex-shrink: 0;
 }
-  
-@keyframes scroll-left {
+
+@keyframes scroll {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);
