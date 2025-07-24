@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tessra AI | Autonomous Defense Systems</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
   <!-- Locomotive Scroll and GSAP -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
 
   <style>
     html.has-scroll-smooth { overflow: hidden; }
   </style>
+  
 </head>
 <body>
 
+  <!-- Floating Top Left Buttons with scroll targets -->
 <div class="top-left-nav">
   <button data-scroll-to="#home">About Us</button>
   <button data-scroll-to="#mission">AI</button>
@@ -27,45 +29,48 @@
   <button data-scroll-to="#careers">Careers</button>
 </div>
 
+
 <main data-scroll-container>
 
   <!-- Background Video -->
-  <section class="hero-wrapper" id="home">
-    <div class="hero-video-container">
-      <video 
-        autoplay 
-        muted 
-        loop 
-        id="bg-video" 
-        playsinline 
-        preload="metadata" 
-        poster="assets/tesra-poster.jpg">
-        <source src="https://pub-c61aeacde1474fc58d5482d734f0e5f7.r2.dev/tesra-bg.mp4" type="video/mp4" />
-      </video>
+ <!-- Hero Video + Overlayed Text -->
+<section class="hero-wrapper" id="home">
+  <div class="hero-video-container">
+    <video 
+  autoplay 
+  muted 
+  loop 
+  id="bg-video" 
+  playsinline 
+  preload="auto" 
+  poster="assets/tesra-poster.jpg">
+  <source src="https://pub-c61aeacde1474fc58d5482d734f0e5f7.r2.dev/tesra-bg.mp4" type="video/mp4">
+</video>
 
-      <div class="hero-text-section">
-        <h1 class="hero-main-text">
-          Tessra is the first-of-its-kind AI<br>
-          automation company bringing a<br>
-          general purpose humanoid to&nbsp;life.
-        </h1>
-      </div>
-    </div>
-  </section>
+
+    <div class="hero-text-section">
+  <h1 class="hero-main-text">
+    Tessra is the first-of-its-kind AI<br>
+    automation company bringing a<br>
+    general purpose humanoid to&nbsp;life.
+  </h1>
+</div>
+</div>
+</section>
+
 
   <!-- Mission Section -->
   <section class="info-section" id="mission">
-    <div class="fade-content">
-      <h2 class="mission-subtitle">Our Mission</h2>
-      <div class="mission-block">
-        <div class="mission-left">
-          <h1>Transforming robotic<br>capabilities with advanced<br>technology.</h1>
-        </div>
-        <div class="mission-right">
-          <p class="mission-text">The future of labor isn't human. It's autonomous, intelligent, and already here.</p>
-          <p class="mission-text">Tessra AI designs next-gen autonomous drones, AI limbs, and robotic systems to supercharge agriculture, industry, and rehabilitation.</p>
-          <a class="mission-link" href="#">Learn More</a>
-        </div>
+     <div class="fade-content">
+    <h2 class="mission-subtitle">Our Mission</h2>
+    <div class="mission-block">
+      <div class="mission-left">
+        <h1>Transforming robotic<br>capabilities with advanced<br>technology.</h1>
+      </div>
+      <div class="mission-right">
+        <p class="mission-text">The future of labor isn't human. It's autonomous, intelligent, and already here.</p>
+        <p class="mission-text">Tessra AI designs next-gen autonomous drones, AI limbs, and robotic systems to supercharge agriculture, industry, and rehabilitation.</p>
+        <a class="mission-link" href="#"></a>
       </div>
     </div>
   </section>
@@ -73,84 +78,101 @@
   <!-- Full Width Images -->
   <div class="full-image-section">
     <div class="image1-wrapper">
-      <img src="assets/image1.png" alt="Tessra AI Image" loading="lazy" />
-      <img src="assets/itsimage.png" alt="Its Image" class="reveal-image" loading="lazy" />
-    </div>
+    <img src="assets/image1.png" alt="Tessra AI Image" >
+    <img src="assets/itsimage.png" alt="Its Image" class="reveal-image">
   </div>
 
   <!-- Roadrunner Section -->
-  <section class="roadrunner-section" id="roadrunner">
-    <div class="fade-content">
-      <div class="roadrunner-block">
-        <div class="roadrunner-left">
-          <video autoplay muted loop playsinline preload="metadata" class="roadrunner-video">
-            <source src="https://pub-c61aeacde1474fc58d5482d734f0e5f7.r2.dev/second%20tesra.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="roadrunner-right">
-          <h3 class="roadrunner-title">Aeros Voyager</h3>
-          <h1 class="roadrunner-heading">Aeros Advanced Multi-Tasker Rover (AMR)</h1>
-          <p class="roadrunner-text">Aeros is a versatile, reusable Autonomous Ground Robot...</p>
-          <a href="#" class="roadrunner-link">Learn More About Aeros Voyager →</a>
-        </div>
+ <section class="roadrunner-section" id="roadrunner">
+  <div class="fade-content">
+    <div class="roadrunner-block">
+      <div class="roadrunner-left">
+        <video autoplay muted loop playsinline class="roadrunner-video">
+          <source src="https://pub-c61aeacde1474fc58d5482d734f0e5f7.r2.dev/second%20tesra.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="roadrunner-right">
+        <h3 class="roadrunner-title">Aeros Voyager</h3>
+        <h1 class="roadrunner-heading">Aeros Advanced Multi-Tasker Rover (AMR)</h1>
+        <p class="roadrunner-text">Aeros is a versatile, reusable Autonomous Ground Robot with modular manipulators and AI navigation, capable of handling diverse industrial, commercial, and household tasks.</p>
+        <a href="#" class="roadrunner-link">Learn More About Aeros Voyager →</a>
       </div>
     </div>
   </section>
 
   <!-- Three Panel Section -->
   <section class="three-panel-section">
-    <div class="panel">
+   <div class="panel">
       <div class="panel-content">
         <div class="panel-title">AEROS</div>
-        <div class="panel-text">Robots autonomous performing complex industrial tasks.</div>
+        <div class="panel-text">Robots autonomous performing complex industrial tasks with precision and efficiency.</div>
         <div class="read-more">READ MORE</div>
       </div>
-      <img src="assets/imagefirst.png" alt="AEROS" loading="lazy" />
+      <img src="assets/imagefirst.png" alt="AEROS">
     </div>
     <div class="panel">
       <div class="panel-content">
         <div class="panel-title">HV-25</div>
-        <div class="panel-text">Robotic hand autonomous handling tools and tasks.</div>
+        <div class="panel-text">Robotic hand autonomous handling tools, food, and industrial processes.</div>
         <div class="read-more">READ MORE</div>
       </div>
-      <img src="assets/image2.png" alt="HV-25" loading="lazy" />
+      <img src="assets/image2.png" alt="HV-25">
     </div>
     <div class="panel">
       <div class="panel-content">
         <div class="panel-title">APEX</div>
-        <div class="panel-text">Drones autonomous covering farms and spraying crops.</div>
+        <div class="panel-text">Drones autonomous covering farms, spraying crops, and mapping fields.</div>
         <div class="read-more">READ MORE</div>
       </div>
-      <img src="assets/image3.png" alt="APEX" loading="lazy" />
+      <img src="assets/image3.png" alt="APEX">
+    </div>
+  </section>
+
+  <!-- Partner Logos Moving Horizontally -->
+  <section class="partner-logos-section">
+    <div class="logo-slider">
+      <img src="assets/img1.png" alt="Logo 1">
+      <img src="assets/img2.png" alt="Logo 2">
+      <img src="assets/img3.png" alt="Logo 3">
+      <img src="assets/img4.png" alt="Logo 4">
+      <img src="assets/img5.png" alt="Logo 5">
+    <img src="assets/img1.png" alt="Logo 1 duplicate">
+    <img src="assets/img2.png" alt="Logo 2 duplicate">
+    <img src="assets/img3.png" alt="Logo 3 duplicate">
+    <img src="assets/img4.png" alt="Logo 4 duplicate">
+    <img src="assets/img5.png" alt="Logo 5 duplicate">
+    
     </div>
   </section>
 
   <!-- Careers Section -->
-  <section class="careers-section" id="careers">
-    <div class="fade-content">
-      <div class="careers-container">
-        <div class="careers-text">
-          <h2>Careers</h2>
-          <h1>Join us in creating<br>the future of<br>robotics.</h1>
-          <p>
-            From light bulb to prototype in a week.<br>
-            A team making the world safer with robotics.
-          </p>
-          <a class="careers-link" href="#">Learn More →</a>
-        </div>
-        <div class="careers-images">
-          <div class="bottom-imgs">
-            <img src="assets/ima2.png" alt="Careers Image 2" loading="lazy" />
-            <img src="assets/ima3.png" alt="Careers Image 3" loading="lazy" />
-          </div>
-          <div class="stretched-wrapper">
-            <img src="assets/ima1.png" alt="Careers Image 1" class="top-img" loading="lazy" />
-            <img src="assets/ima4.png" alt="Careers Image 4" class="top-img" loading="lazy" />
-          </div>
-        </div>
+ 
+<section class="careers-section" id="careers">
+   <div class="fade-content">
+    <div class="careers-container">
+      <div class="careers-text">
+        <h2>Careers</h2>
+        <h1>Join us in creating<br>the future of<br>robotics.</h1>
+        <p>
+          From light bulb to functional prototype in a week.<br>
+          A team rallying around a shared intention to make a<br>
+          positive impact by creating a safer world. That's life<br>
+          at Tessra AI.
+        </p>
+        <a class="careers-link" href="#">Learn More →</a>
       </div>
-    </div>
-  </section>
+      <div class="careers-images">
+  <div class="bottom-imgs">
+    <img src="assets/ima2.png" alt="Careers Image 2">
+    <img src="assets/ima3.png" alt="Careers Image 3">
+  </div>
+  <div class="stretched-wrapper">
+    <img src="assets/ima1.png" alt="Careers Image 1" class="top-img">
+    <img src="assets/ima4.png" alt="Careers Image 4" class="top-img"> <!-- NEW image added here -->
+  </div>
+</div>
+</section>
+
 
   <!-- Footer -->
   <footer id="contact">
@@ -190,8 +212,159 @@
 
 </main>
 
-<!-- External script moved to bottom -->
-<script src="main.js" defer></script>
+
+<script>
+ 
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const loco = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
+
+  loco.on('scroll', ScrollTrigger.update);
+
+  ScrollTrigger.scrollerProxy('[data-scroll-container]', {
+    scrollTop(value) {
+      return arguments.length ? loco.scrollTo(value, 0, 0) : loco.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
+  });
+
+  ScrollTrigger.addEventListener('refresh', () => loco.update());
+  ScrollTrigger.refresh();
+
+  // Fix flickering on first load
+window.addEventListener("load", () => {
+  loco.update();
+  ScrollTrigger.refresh();
+ });
+
+// Smooth scroll when nav buttons are clicked
+document.querySelectorAll('[data-scroll-to]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const target = btn.getAttribute('data-scroll-to');
+    loco.scrollTo(target, {
+      offset: 0,
+      duration: 1200,
+      easing: [0.25, 0.00, 0.35, 1.00]
+    });
+  });
+});
+
+let lastScrollY = 0;
+const nav = document.querySelector('.top-left-nav');
+
+loco.on('scroll', ({ scroll }) => {
+  const currentScroll = scroll.y;
+
+  if (currentScroll > lastScrollY + 10) {
+    // Scrolling down — hide
+    nav.classList.add('hidden');
+  } else if (currentScroll < lastScrollY - 10) {
+    // Scrolling up — show
+    nav.classList.remove('hidden');
+  }
+
+  lastScrollY = currentScroll;
+});
+
+
+
+gsap.fromTo("img[src*='image1.png']",
+  { autoAlpha: 0, y: 30 },
+  {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: "img[src*='image1.png']",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    autoAlpha: 1,
+    y: 0,
+    duration: 2,
+    ease: "power4.out"
+  }
+);
+
+
+
+// Fade-in for itsimage.png only (separate from image1.png)
+gsap.fromTo("img[src*='itsimage.png']", 
+  { opacity: 0 },           
+  { 
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: "img[src*='itsimage.png']",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    },
+    opacity: 1,              
+    duration: 2,
+    ease: "power2.out"
+  }
+);
+
+// Section Content Fade In (Only inner content, not background)
+gsap.utils.toArray(".fade-content").forEach(content => {
+  if (!content.closest(".careers-section")) {  // ✅ Skip Careers fade-content
+  gsap.from(content, {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: content,
+      start: "top 85%",
+    },
+    autoAlpha: 0,
+    y: 100,
+    duration: 3,
+    ease: "power2.out",
+    delay: 0.2
+  });
+}
+});
+
+
+
+  // Stagger panels with Anduril-like delay
+  gsap.utils.toArray(".panel").forEach((panel, index) => {
+    gsap.from(panel, {
+      scrollTrigger: {
+        scroller: "[data-scroll-container]",
+        trigger: panel,
+        start: "top 90%",
+      },
+      autoAlpha: 0,
+      y: 50,
+      delay: index * 0.2,
+      duration: 1,
+      ease: "power3.out"
+    });
+  });
+
+  // Careers Image Stagger
+  gsap.fromTo(".careers-section .fade-content", 
+  { autoAlpha: 0, y: 100 },
+  {
+    scrollTrigger: {
+      scroller: "[data-scroll-container]",
+      trigger: ".careers-section",
+      start: "top 85%",
+      toggleActions: "play none none none"  // ✅ Stops it from disappearing again
+    },
+    autoAlpha: 1,
+    y: 0,
+    delay: 0.2,
+    duration: 3,
+    ease: "power2.out"
+  }
+);
+
+</script>
 
 </body>
 </html>
