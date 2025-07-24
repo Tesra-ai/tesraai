@@ -657,18 +657,29 @@ html.has-scroll-smooth {
 .partner-logos-section {
   overflow: hidden;
   background-color: #e8e0d9;
+  padding: 20px 0;
 }
 
 .logo-slider {
   display: flex;
-  flex-wrap: nowrap;
+  width: max-content; /* ensures content scrolls without wrap */
   animation: scroll-left 20s linear infinite;
 }
 
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }  /* ✅ Scrolls the full width of one full set */
+.logo-slider img {
+  max-height: 50px;
+  margin-right: 50px;
 }
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 .partner-logos-section img {
   max-height: 50px;
