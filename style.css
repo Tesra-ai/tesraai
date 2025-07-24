@@ -536,20 +536,22 @@ width: 46% !important;  /* ✅ Fix overflow */
 
 
 /* Locomotive Scroll smooth */
+
+[data-scroll-container] {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+html.is-loaded [data-scroll-container] {
+  opacity: 1;
+  visibility: visible;
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }
 
-[data-scroll-container] {
-  visibility: hidden;
-  transition: visibility 0s ease, opacity 0.4s ease;
-  opacity: 0;
-}
-
-html.is-loaded [data-scroll-container] {
-  visibility: visible;
-  opacity: 1;
-}
 
 
 /* Header */

@@ -202,15 +202,12 @@
   gsap.registerPlugin(ScrollTrigger);
 
   const scrollContainer = document.querySelector('[data-scroll-container]');
-
   const loco = new LocomotiveScroll({
     el: scrollContainer,
-    smooth: true,
-    lerp: 0.1, // Add damping for less DOM updates
-    multiplier: 1
+    smooth: true
   });
 
-  // Sync ScrollTrigger with Locomotive Scroll
+  // ScrollTrigger + Locomotive Proxy Setup
   loco.on("scroll", ScrollTrigger.update);
 
   ScrollTrigger.scrollerProxy(scrollContainer, {
@@ -218,112 +215,70 @@
       return arguments.length ? loco.scrollTo(value, 0, 0) : loco.scroll.instance.scroll.y;
     },
     getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight
-      };
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
     },
     pinType: scrollContainer.style.transform ? "transform" : "fixed"
   });
 
-  // Delay ScrollTrigger refresh to prevent top freeze
+  // Page Load Fade-in + Sync
   window.addEventListener("load", () => {
+    document.documentElement.classList.add("is-loaded");
     setTimeout(() => {
-      document.documentElement.classList.add("is-loaded");
       ScrollTrigger.refresh();
       loco.update();
-    }, 100); // delay lets layout settle
+    }, 100);
   });
 
-  // Debounced refresh on resize
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      loco.update();
+  // Resize sync
+  window.addEventListener('resize', () => {
+    setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 300);
+      loco.update();
+    }, 250);
   });
 
-  // Smooth scroll on nav click
+  // Nav show/hide
+  let lastScroll = 0;
+  const nav = document.querySelector('.top-left-nav');
+  loco.on('scroll', ({ scroll }) => {
+    if (!nav) return;
+    const currentScroll = scroll.y;
+    if (currentScroll > lastScroll + 10) {
+      nav.classList.add("hidden");
+    } else if (currentScroll < lastScroll - 10) {
+      nav.classList.remove("hidden");
+    }
+    lastScroll = currentScroll;
+  });
+
+  // Smooth Nav Scroll
   document.querySelectorAll('[data-scroll-to]').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
       const target = btn.getAttribute('data-scroll-to');
       loco.scrollTo(target, {
         offset: 0,
-        duration: 1200,
+        duration: 1000,
         easing: [0.25, 0.00, 0.35, 1.00]
       });
     });
   });
 
-  // Auto hide nav on scroll
-  const nav = document.querySelector('.top-left-nav');
-  let lastScrollY = 0;
-  loco.on("scroll", ({ scroll }) => {
-    const currentY = scroll.y;
-    if (currentY > lastScrollY + 10) nav.classList.add("hidden");
-    else if (currentY < lastScrollY - 10) nav.classList.remove("hidden");
-    lastScrollY = currentY;
-  });
-
-  // Animations
-
-  // 1. Single image fade
-  gsap.fromTo("img[src*='image1.png']",
-    { autoAlpha: 0, y: 30 },
-    {
-      scrollTrigger: {
-        scroller: scrollContainer,
-        trigger: "img[src*='image1.png']",
-        start: "top 85%",
-        toggleActions: "play none none none"
-      },
-      autoAlpha: 1,
-      y: 0,
-      duration: 2,
-      ease: "power4.out"
-    }
-  );
-
-  // 2. Another image fade
-  gsap.fromTo("img[src*='itsimage.png']",
-    { opacity: 0 },
-    {
-      scrollTrigger: {
-        scroller: scrollContainer,
-        trigger: "img[src*='itsimage.png']",
-        start: "top 85%",
-        toggleActions: "play none none none"
-      },
-      opacity: 1,
-      duration: 2,
-      ease: "power2.out"
-    }
-  );
-
-  // 3. Section fade-ins except careers
+  // Animations (Image & Content Fade)
   gsap.utils.toArray(".fade-content").forEach(el => {
-    if (!el.closest(".careers-section")) {
-      gsap.from(el, {
-        scrollTrigger: {
-          scroller: scrollContainer,
-          trigger: el,
-          start: "top 85%"
-        },
-        autoAlpha: 0,
-        y: 100,
-        duration: 3,
-        ease: "power2.out",
-        delay: 0.2
-      });
-    }
+    gsap.from(el, {
+      scrollTrigger: {
+        scroller: scrollContainer,
+        trigger: el,
+        start: "top 85%"
+      },
+      autoAlpha: 0,
+      y: 100,
+      duration: 1.6,
+      ease: "power2.out"
+    });
   });
 
-  // 4. Panels fade stagger
   gsap.utils.toArray(".panel").forEach((panel, i) => {
     gsap.from(panel, {
       scrollTrigger: {
@@ -332,30 +287,12 @@
         start: "top 90%"
       },
       autoAlpha: 0,
-      y: 50,
-      delay: i * 0.2,
-      duration: 1,
+      y: 60,
+      duration: 1.2,
+      delay: i * 0.1,
       ease: "power3.out"
     });
   });
-
-  // 5. Careers fade
-  gsap.fromTo(".careers-section .fade-content",
-    { autoAlpha: 0, y: 100 },
-    {
-      scrollTrigger: {
-        scroller: scrollContainer,
-        trigger: ".careers-section",
-        start: "top 85%",
-        toggleActions: "play none none none"
-      },
-      autoAlpha: 1,
-      y: 0,
-      duration: 3,
-      delay: 0.2,
-      ease: "power2.out"
-    }
-  );
 </script>
 
 
