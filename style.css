@@ -660,15 +660,19 @@ html.has-scroll-smooth {
   padding: 20px 0;
 }
 
+.slider-track {
+  width: 100%;
+  overflow: hidden;
+}
+
 .logo-slider {
   display: flex;
-  width: calc(10 * 100px + 9 * 50px); /* 10 logos + 9 margins */
+  width: fit-content;
   animation: scroll-left 20s linear infinite;
 }
 
 .logo-slider img {
   max-height: 50px;
-  width: 100px;
   margin-right: 50px;
 }
 
