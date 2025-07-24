@@ -655,37 +655,38 @@ html.has-scroll-smooth {
 
 /* Logo Slider (horizontal moving logos) */
 .partner-logos-section {
-  overflow: hidden;
   background-color: #e8e0d9;
+  overflow: hidden;
   padding: 20px 0;
 }
 
-.logo-slider {
+.logo-track {
   display: flex;
-  width: max-content;
-  animation: scroll-left 30s linear infinite;
-  will-change: transform;          /* ✅ triggers GPU rendering */
-  transform: translateZ(0);        /* ✅ forces hardware acceleration */
+  width: fit-content;
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
 }
 
+.logo-set {
+  display: flex;
+}
 
-.logo-slider img {
+.logo-set img {
   height: 50px;
-  width: 150px;           /* ✅ Fix: give width so each image takes space */
+  width: 150px;
   margin-right: 50px;
-  object-fit: contain;
   flex-shrink: 0;
+  object-fit: contain;
 }
-
+  
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
+    transform: translateX(-50%);
   }
 }
-
 
 .partner-logos-section img {
   max-height: 50px;
