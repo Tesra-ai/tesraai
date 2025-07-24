@@ -223,12 +223,7 @@
   ScrollTrigger.addEventListener('refresh', () => loco.update());
   ScrollTrigger.refresh();
 
-  // Fix flickering on first load
-window.addEventListener("load", () => {
-  loco.update();
-  ScrollTrigger.refresh();
- });
-
+ 
 // Smooth scroll when nav buttons are clicked
 document.querySelectorAll('[data-scroll-to]').forEach(btn => {
   btn.addEventListener('click', e => {
