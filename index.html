@@ -206,17 +206,16 @@
   const loco = new LocomotiveScroll({
     el: scrollContainer,
     smooth: true,
-    lerp: 0.1,
-    smartphone: { smooth: true },
-    tablet: { smooth: true }
+    lerp: 0.1, // Add damping for less DOM updates
+    multiplier: 1
   });
 
-  // ScrollTrigger proxy
+  // Sync ScrollTrigger with Locomotive Scroll
+  loco.on("scroll", ScrollTrigger.update);
+
   ScrollTrigger.scrollerProxy(scrollContainer, {
     scrollTop(value) {
-      return arguments.length
-        ? loco.scrollTo(value, 0, 0)
-        : loco.scroll.instance.scroll.y;
+      return arguments.length ? loco.scrollTo(value, 0, 0) : loco.scroll.instance.scroll.y;
     },
     getBoundingClientRect() {
       return {
@@ -226,30 +225,29 @@
         height: window.innerHeight
       };
     },
-    pinType: getComputedStyle(scrollContainer).transform !== "none" ? "transform" : "fixed"
+    pinType: scrollContainer.style.transform ? "transform" : "fixed"
   });
 
-  // Update on scroll
-  loco.on('scroll', ScrollTrigger.update);
-
-  // Fade in page after load
+  // Delay ScrollTrigger refresh to prevent top freeze
   window.addEventListener("load", () => {
-    document.documentElement.classList.add("is-loaded");
-    ScrollTrigger.refresh();
-    loco.update();
+    setTimeout(() => {
+      document.documentElement.classList.add("is-loaded");
+      ScrollTrigger.refresh();
+      loco.update();
+    }, 100); // delay lets layout settle
   });
 
-  // Debounced resize
+  // Debounced refresh on resize
   let resizeTimeout;
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
       loco.update();
       ScrollTrigger.refresh();
-    }, 200);
+    }, 300);
   });
 
-  // Smooth scroll on nav buttons
+  // Smooth scroll on nav click
   document.querySelectorAll('[data-scroll-to]').forEach(btn => {
     btn.addEventListener('click', e => {
       e.preventDefault();
@@ -262,55 +260,59 @@
     });
   });
 
-  // Hide/show nav on scroll
+  // Auto hide nav on scroll
   const nav = document.querySelector('.top-left-nav');
   let lastScrollY = 0;
-  loco.on('scroll', ({ scroll }) => {
-    const currentScroll = scroll.y;
-    if (currentScroll > lastScrollY + 10) {
-      nav.classList.add('hidden');
-    } else if (currentScroll < lastScrollY - 10) {
-      nav.classList.remove('hidden');
+  loco.on("scroll", ({ scroll }) => {
+    const currentY = scroll.y;
+    if (currentY > lastScrollY + 10) nav.classList.add("hidden");
+    else if (currentY < lastScrollY - 10) nav.classList.remove("hidden");
+    lastScrollY = currentY;
+  });
+
+  // Animations
+
+  // 1. Single image fade
+  gsap.fromTo("img[src*='image1.png']",
+    { autoAlpha: 0, y: 30 },
+    {
+      scrollTrigger: {
+        scroller: scrollContainer,
+        trigger: "img[src*='image1.png']",
+        start: "top 85%",
+        toggleActions: "play none none none"
+      },
+      autoAlpha: 1,
+      y: 0,
+      duration: 2,
+      ease: "power4.out"
     }
-    lastScrollY = currentScroll;
-  });
+  );
 
-  // Image fade-ins
-  gsap.fromTo("img[src*='image1.png']", {
-    autoAlpha: 0, y: 30
-  }, {
-    scrollTrigger: {
-      scroller: scrollContainer,
-      trigger: "img[src*='image1.png']",
-      start: "top 85%",
-    },
-    autoAlpha: 1,
-    y: 0,
-    duration: 2,
-    ease: "power4.out"
-  });
+  // 2. Another image fade
+  gsap.fromTo("img[src*='itsimage.png']",
+    { opacity: 0 },
+    {
+      scrollTrigger: {
+        scroller: scrollContainer,
+        trigger: "img[src*='itsimage.png']",
+        start: "top 85%",
+        toggleActions: "play none none none"
+      },
+      opacity: 1,
+      duration: 2,
+      ease: "power2.out"
+    }
+  );
 
-  gsap.fromTo("img[src*='itsimage.png']", {
-    opacity: 0
-  }, {
-    scrollTrigger: {
-      scroller: scrollContainer,
-      trigger: "img[src*='itsimage.png']",
-      start: "top 85%",
-    },
-    opacity: 1,
-    duration: 2,
-    ease: "power2.out"
-  });
-
-  // Fade-in all fade-content elements
-  gsap.utils.toArray(".fade-content").forEach(content => {
-    if (!content.closest(".careers-section")) {
-      gsap.from(content, {
+  // 3. Section fade-ins except careers
+  gsap.utils.toArray(".fade-content").forEach(el => {
+    if (!el.closest(".careers-section")) {
+      gsap.from(el, {
         scrollTrigger: {
           scroller: scrollContainer,
-          trigger: content,
-          start: "top 85%",
+          trigger: el,
+          start: "top 85%"
         },
         autoAlpha: 0,
         y: 100,
@@ -321,23 +323,23 @@
     }
   });
 
-  // Panel fade-ins
-  gsap.utils.toArray(".panel").forEach((panel, index) => {
+  // 4. Panels fade stagger
+  gsap.utils.toArray(".panel").forEach((panel, i) => {
     gsap.from(panel, {
       scrollTrigger: {
         scroller: scrollContainer,
         trigger: panel,
-        start: "top 90%",
+        start: "top 90%"
       },
       autoAlpha: 0,
       y: 50,
-      delay: index * 0.2,
+      delay: i * 0.2,
       duration: 1,
       ease: "power3.out"
     });
   });
 
-  // Careers section
+  // 5. Careers fade
   gsap.fromTo(".careers-section .fade-content",
     { autoAlpha: 0, y: 100 },
     {
@@ -345,11 +347,12 @@
         scroller: scrollContainer,
         trigger: ".careers-section",
         start: "top 85%",
+        toggleActions: "play none none none"
       },
       autoAlpha: 1,
       y: 0,
-      delay: 0.2,
       duration: 3,
+      delay: 0.2,
       ease: "power2.out"
     }
   );
