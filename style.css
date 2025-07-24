@@ -664,7 +664,10 @@ html.has-scroll-smooth {
   display: flex;
   width: max-content;
   animation: scroll-left 30s linear infinite;
+  will-change: transform;          /* ✅ triggers GPU rendering */
+  transform: translateZ(0);        /* ✅ forces hardware acceleration */
 }
+
 
 .logo-slider img {
   height: 50px;
