@@ -220,8 +220,15 @@
     pinType: document.querySelector('[data-scroll-container]').style.transform ? "transform" : "fixed"
   });
 
-  ScrollTrigger.addEventListener('refresh', () => loco.update());
+ let locoUpdateTimeout;
+ScrollTrigger.addEventListener('refresh', () => {
+  clearTimeout(locoUpdateTimeout);
+  locoUpdateTimeout = setTimeout(() => loco.update(), 100);
+});
+setTimeout(() => {
   ScrollTrigger.refresh();
+  loco.update();
+}, 100);
 
  
 // Smooth scroll when nav buttons are clicked
