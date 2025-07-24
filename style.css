@@ -1,11 +1,9 @@
 /* GENERAL RESET */
 body, html {
-  height: 100%;
-  backface-visibility: hidden;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #e8e0d9;
+  background-color: #f4ecf1;
   color: #111;
   overflow-x: hidden;
 }
@@ -13,133 +11,54 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
-
 /* HEADER */
-/* Floating Top Left Navigation Buttons (Figure.ai style) */
-.top-left-nav {
+.site-header {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 10000;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.top-left-nav button {
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 10px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  transition: background-color 0.3s ease;
-}
-
-.top-left-nav button:hover {
-  background-color: #f0f0f0;
-}
-
-@media (max-width: 768px) {
-  .top-left-nav {
-    flex-direction: column;
-  }
-}
-
-.top-left-nav {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.top-left-nav.hidden {
-  transform: translateY(-120%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-/* VIDEO */
-.hero-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-#bg-video {
-  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* HERO TEXT BLOCK (like Figure.ai) */
-.hero-text-section {
-  position: absolute;
-  bottom: 8%;       /* ⬅ Pushes text lower */
-  left: 3%;       /* ⬅ Pushes more to the left edge */
-  z-index: 10;
-  max-width: 480px;
-  color: #fff;
-  padding: 0 0.5rem;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-
-.hero-text-container {
+  right: 0;
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  z-index: 100;
 }
-
-.hero-main-text {
-  font-size: 1.8rem;
-  font-weight: 800; /* ⬅️ makes it bolder */
-  line-height: 1.4;
-  letter-spacing: -0.3px;
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
   color: #fff;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* subtle depth */
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-  margin: 0;
+  letter-spacing: 1px;
+}
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .navbar {
+    gap: 10px;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
 }
 
-
-
-@media (max-width: 768px) {
-  .hero-main-text {
-    font-size: 1.4rem;
-  }
-
-  .hero-text-section {
-    bottom: 8%;
-    left: 3%;
-    max-width: 90%;
-  }
+/* VIDEO */
+#bg-video {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
-
-
-
 
 /* MISSION */
 .info-section {
-  background-color: #e8e0d9;
+  background-color: #f4ecf1;
   color: #111;
   padding: 8rem 2rem;
 }
@@ -344,8 +263,8 @@ footer {
   justify-content: space-between;
   align-items: stretch;
   margin: 4rem 1rem;
-  border-top: 1px solid #e8e0d9;
-  border-bottom: 1px solid #e8e0d9;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 }
 
 .panel {
@@ -359,12 +278,6 @@ footer {
   padding: 3rem 1rem;
   height: 600px; /* doubled height */
   transition: background 0.3s ease;
-
-  display: flex;                /* NEW */
-  flex-direction: column;       /* NEW */
-  justify-content: center;      /* NEW - centers vertically */
-  align-items: center;          /* NEW - centers horizontally */
-  text-align: center;           /* Keeps text nicely aligned */
 }
 
 .panel:first-child {
@@ -387,16 +300,16 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0 !important;
-  transform: translateY(100%) !important;
+  opacity: 0;
+  transform: translateY(100%);
   transition: transform 0.5s ease, opacity 0.5s ease;
   z-index: 1;
 }
 
 /* Hide text on hover */
 .panel:hover img {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .panel:hover .panel-content {
@@ -427,7 +340,7 @@ footer {
   cursor: pointer;
 }
  .careers-section {
-  background-color: #e8e0d9;
+  background-color: #f2ebe7;
   padding: 3rem 2rem;
 }
 
@@ -437,14 +350,11 @@ footer {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-   padding: 0 2rem; /* ✅ Adds space on sides */
 }
 
 .careers-text {
   max-width: 500px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-   flex: 1;
-    margin-left: 3rem; /* ✅ Pushes text rightward */
 }
 
 .careers-text h2 {
@@ -479,44 +389,26 @@ footer {
 .careers-images {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   flex: 1;
-  max-width: 650px;
-  width: 100%;  /* ✅ Align images to the left */
+  max-width: 600px;
 }
-
 
 .top-img {
-  width: 46% !important;  /* ✅ Fix overflow */
-  height: auto;
+  width: 100%;
   border-radius: 6px;
-  object-fit: cover;
-  max-width: 100%;          /* Ensures it doesn't exceed its container */
-  margin-left: 0rem;      /* ✅ Nudges it slightly more to the left */
-  margin-top: 1rem;         /* ✅ Move image down */
 }
-
-
 
 .bottom-imgs {
   display: flex;
   gap: 1rem;
-   flex-wrap: 100; /* ✅ Allow wrapping on narrow screens */
 }
 
 .bottom-imgs img {
-width: 46% !important;  /* ✅ Fix overflow */
+  width: 50%;
   border-radius: 6px;
   object-fit: cover;
-   max-width: 100%;            /* Responsive safety */
 }
-
-.stretched-wrapper {
-  display: flex;
-  width: 100%;
-  gap: 1rem;
-}
-
 
 @media (max-width: 900px) {
   .careers-container {
@@ -531,28 +423,59 @@ width: 46% !important;  /* ✅ Fix overflow */
     width: 100%;
   }
 }
+.partner-logos-section {
+  margin: 4rem 0; /* spacing from careers section */
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.logo-slider {
+  display: flex;
+  gap: 3rem;
+  animation: scroll-left 15s linear infinite;
+  align-items: center;
+}
+
+.logo-slider img {
+  height: 80px; /* Adjust logo size here */
+  object-fit: contain;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-slider img {
+    height: 50px;
+  }
+}
 
 /* General Reset */
-
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
 
 /* Locomotive Scroll smooth */
-
-[data-scroll-container] {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease;
-}
-
-html.is-loaded [data-scroll-container] {
-  opacity: 1;
-  visibility: visible;
-}
-
 html.has-scroll-smooth {
   overflow: hidden;
 }
 
-
+[data-scroll-container] {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
 
 /* Header */
 .site-header {
@@ -567,7 +490,7 @@ html.has-scroll-smooth {
   justify-content: space-between;
 }
 .site-header .navbar a {
-  color: #e8e0d9;
+  color: #fff;
   margin-left: 1rem;
   text-decoration: none;
 }
@@ -626,8 +549,24 @@ html.has-scroll-smooth {
 }
 
 /* Logo Slider (horizontal moving logos) */
+.logo-slider {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
+.logo-slider img {
+  height: 60px;
+  opacity: 0.7;
+  animation: slideLeft 20s linear infinite;
+}
 
+@keyframes slideLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 
 /* Footer */
 .site-footer {
@@ -672,28 +611,4 @@ html.has-scroll-smooth {
   .images-grid img {
     max-width: 100%;
   }
-}
-.image1-wrapper {
-  background-color: #e8e0d9;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.image1-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.image1-img {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: transform 5s ease, opacity 5s ease;  /* Slow transition, 2 seconds */
-}
-
-.image1-img.show {
-  opacity: 1;
-  transform: translateY(0);
 }
